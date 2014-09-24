@@ -167,14 +167,14 @@
 -(void)whereKey:(NSString *)key notContainedIn:(NSArray *)array;
 
 /**
- *  指定的key的值是存在的
+ *  指定的key是存在的
  *
  *  @param key 键
  */
 -(void)whereKeyExists:(NSString *)key;
 
 /**
- *  指定的key的值是不存在的
+ *  指定的key是不存在的
  *
  *  @param key 键
  */
@@ -274,10 +274,11 @@
 -(void)addTheConstraintByOrOperationWithArray:(NSArray *)array;
 
 
+
 /**
  *  构造查询条件,一旦设置，查询的条件即为conDictionary
  *
- *  @param array 构造查询条件
+ *  @param conDictionary 构造查询条件
  */
 -(void)queryWithAllConstraint:(NSDictionary*)conDictionary;
 

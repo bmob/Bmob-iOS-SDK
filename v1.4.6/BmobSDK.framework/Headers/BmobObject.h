@@ -19,7 +19,7 @@
 /**
  *	 BmobObject对象的id
  */
-@property(nonatomic,retain)NSString *objectId;
+@property(nonatomic,copy)NSString *objectId;
 
 /**
  *	 BmobObject对象的最后更新时间
@@ -34,7 +34,7 @@
 /**
  *  BmobObject对象的表名
  */
-@property(nonatomic,retain)NSString * className;
+@property(nonatomic,copy)NSString * className;
 
 
 /**

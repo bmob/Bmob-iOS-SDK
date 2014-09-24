@@ -24,6 +24,7 @@
 #import "BmobACL.h"
 #import "BmobRole.h"
 #import "BmobImage.h"
+#import "BmobEvent.h"
 
 @interface Bmob : NSObject
 

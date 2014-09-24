@@ -45,6 +45,18 @@ typedef enum {
     kBmobImageOutputStringStream    //图片处理后输出base64编码的字符串流
 }BmobImageOutputType;
 
+typedef enum {
+    BmobActionTypeUpdateTable = 0,  //表更新
+    BmobActionTypeUpdateRow,        //行更新
+    BmobActionTypeDeleteTable,      //表删除
+    BmobActionTypeDeleteRow         //行删除
+}BmobActionType;
+
+typedef enum {
+    BmobSNSPlatformQQ = 0,          //qq平台
+    BmobSNSPlatformSinaWeibo        //新浪微博
+}BmobSNSPlatform;
+
 typedef void (^BmobObjectResultBlock)(BmobObject *object, NSError *error);
 typedef void (^BmobObjectArrayResultBlock)(NSArray *array, NSError *error);
 typedef void (^BmobGeoPointBlock)(BmobGeoPoint *geoPoint, NSError *error);
@@ -57,7 +69,9 @@ typedef void (^BmobFileBlock)(BmobFile *file,NSError *error);
 
 UIKIT_STATIC_INLINE NSString* Version()
 {
-	return @"1.3.13";
+	return @"1.4.6";
 }
+
+
 
 #endif

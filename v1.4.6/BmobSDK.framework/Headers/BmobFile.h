@@ -16,17 +16,17 @@
 /**
  *	文件名
  */
-@property(nonatomic,retain)NSString  *name;
+@property(nonatomic,copy)NSString  *name;
 
 /**
  *	文件的地址
  */
-@property(nonatomic,retain)NSString  *url;
+@property(nonatomic,copy)NSString  *url;
 
 /**
  *	文件的组名
  */
-@property(nonatomic,retain)NSString  *group;
+@property(nonatomic,copy)NSString  *group;
 
 
 

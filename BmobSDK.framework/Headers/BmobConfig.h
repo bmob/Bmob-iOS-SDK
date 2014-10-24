@@ -69,7 +69,7 @@ typedef void (^BmobFileBlock)(BmobFile *file,NSError *error);
 
 UIKIT_STATIC_INLINE NSString* Version()
 {
-	return @"1.4.6";
+	return @"1.4.9";
 }
 
 

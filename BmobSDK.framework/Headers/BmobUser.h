@@ -167,4 +167,7 @@
  *	@return	返回BmobUser对象
  */
 +(BmobUser*)getCurrentUser;
+
+
+
 @end

@@ -37,7 +37,7 @@ $ sudo gem install cocoapods
 在你的项目的根目录中新建一个 `Podfile` 文件，添加内容如下：
 
 ```
-pod 'BmobSDK
+pod 'BmobSDK'
 ```
 
 如下图所示：

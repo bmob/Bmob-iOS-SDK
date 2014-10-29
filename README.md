@@ -37,9 +37,7 @@ $ sudo gem install cocoapods
 在你的项目的根目录中新建一个 `Podfile` 文件，添加内容如下：
 
 ```
-
 pod 'BmobSDK
-
 ```
 
 如下图所示：
@@ -50,9 +48,7 @@ pod 'BmobSDK
 终端命令行（使用 `cd` 命令）进入到要使用Bmob的iOS项目的根目录中，执行如下命令安装SDK：
 
 ```
-
 pod install
-
 ```
 
 安装完成之后，你就可以在项目中使用BmobSDK开发了。

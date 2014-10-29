@@ -20,6 +20,7 @@ $ sudo gem install cocoapods
 
 ![](images/install.png)
 
+如果在安装CocoaPods的过程中有任何问题，可以查看文档：http://code4app.com/article/cocoapods-install-usage
 
 ## 安装BmobSDK
 

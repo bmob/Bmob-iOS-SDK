@@ -43,3 +43,4 @@ pod install
 
 安装完成之后，你就可以在项目中使用BmobSDK开发了。
 
+需要注意的是:如果提示缺少类库，需要添加libz.1.2.5.dylib、libicucore.dylib

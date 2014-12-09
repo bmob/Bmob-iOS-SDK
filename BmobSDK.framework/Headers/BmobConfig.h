@@ -65,11 +65,12 @@ typedef void (^BmobIntegerResultBlock)(int number, NSError *error) ;
 typedef void (^BmobUserResultBlock)(BmobUser *user, NSError *error);
 typedef void (^BmobIdResultBlock)(id object, NSError *error);
 typedef void (^BmobFileBlock)(BmobFile *file,NSError *error);
-
+typedef void (^BmobFileBatchProgressBlock)(int index ,float progress);;
+typedef void (^BmobFileBatchResultBlock)(NSArray *array,BOOL isSuccessful ,NSError *error);
 
 UIKIT_STATIC_INLINE NSString* Version()
 {
-	return @"1.4.9";
+	return @"1.4.10";
 }
 
 

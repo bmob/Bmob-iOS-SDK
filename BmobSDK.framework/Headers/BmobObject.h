@@ -21,6 +21,7 @@
  */
 @property(nonatomic,copy)NSString *objectId;
 
+
 /**
  *	 BmobObject对象的最后更新时间
  */
@@ -213,5 +214,7 @@
  *	@param	block	返回删除的结果是成功还是失败
  */
 -(void)deleteInBackgroundWithBlock:(BmobBooleanResultBlock)block;
+
+
 
 @end

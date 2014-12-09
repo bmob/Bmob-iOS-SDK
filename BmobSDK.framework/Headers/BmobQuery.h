@@ -174,12 +174,26 @@
 -(void)whereKeyExists:(NSString *)key;
 
 /**
+ *  keys数组内的各列的值是存在的
+ *
+ *  @param keys 多个列组成的数组
+ */
+-(void)whereKeySExists:(NSArray *)keys;
+
+
+/**
  *  指定的key是不存在的
  *
  *  @param key 键
  */
 -(void)whereKeyDoesNotExist:(NSString *)key;
 
+/**
+ *  keys数组中的各列的值是不存在的
+ *
+ *  @param keys 多个列组成的数组
+ */
+-(void)whereKeysDoesNotExist:(NSArray *)keys;
 /**
  *  查询的对象某个列符合另一个查询
  *
@@ -332,5 +346,8 @@
  *  取消查询
  */
 -(void)cancle;
+
+
+
 
 @end

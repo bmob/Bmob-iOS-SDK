@@ -1,4 +1,16 @@
-﻿v1.4.9 (2014-10-20)
+﻿v1.4.10(2014-12-9)
+1.增加安全认证的功能，注册应用方式修改为
+    NSString *appKey = @"xxxx";
+#if DEBUG
+    [Bmob registerWithAppKey:appKey];
+#else
+    [Bmob registerWithAppKeyReleaseMode:appKey];
+#endif
+2.文件分片上传功能新增进度的方法。进度的范围为（0.0f-1.0f）
+3.新增批量上传的方法
+4.BmobQuery新增-(void)whereKeySExists:(NSArray *)keys;
+和-(void)whereKeysDoesNotExist:(NSArray *)keys; 方法
+v1.4.9 (2014-10-20)
 1.修复openudid冲突的问题
 v1.4.8 (2014-10-11)
 1.修复用户更新函数在iOS6下可能出现的崩溃问题

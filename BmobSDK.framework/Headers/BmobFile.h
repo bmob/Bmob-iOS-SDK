@@ -100,6 +100,9 @@
  */
 -(void)saveInBackgroundByDataSharding:(BmobBooleanResultBlock)block;
 
+
+-(void)saveInBackgroundByDataSharding:(BmobBooleanResultBlock)block progressBlock:(void(^)(float progress))progressBlock;
+
 /**
  *  异步请求删除文件
  */
@@ -116,5 +119,10 @@
  *  取消上传
  */
 -(void)cancle;
+
+
++(void)filesUploadBatchWithPaths:(NSArray *)pathArray
+                   progressBlock:(BmobFileBatchProgressBlock)progress
+                     resultBlock:(BmobFileBatchResultBlock)block;
 
 @end

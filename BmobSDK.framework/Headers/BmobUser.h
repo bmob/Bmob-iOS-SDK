@@ -54,7 +54,7 @@
  *  @param username 用户名
  *  @param password 密码
  */
-+(void)logInWithUsernameInBackground:(NSString*)username
++(void)loginWithUsernameInBackground:(NSString*)username
                             password:(NSString*)password;
 
 
@@ -65,7 +65,7 @@
  *  @param password 密码
  *  @param block    是否成功登陆，若成功登陆返回用户信息
  */
-+(void)logInWithUsernameInBackground:(NSString *)username
++(void)loginWithUsernameInBackground:(NSString *)username
                              password:(NSString *)password
                                 block:(BmobUserResultBlock)block;
 
@@ -149,7 +149,7 @@
  *  @param platform 新浪微博，或者腾讯qq
  *  @param block    取消关联结果跟信息
  */
--(void)cancleLinkedInBackgroundWithPlatform:(BmobSNSPlatform)platform
+-(void)cancelLinkedInBackgroundWithPlatform:(BmobSNSPlatform)platform
                                       block:(BmobBooleanResultBlock)block;
 
 

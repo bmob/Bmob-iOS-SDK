@@ -60,7 +60,7 @@
  *  @param actionType 包括表更新，表删除
  *  @param tableName  表名
  */
--(void)cancleListenTableChange:(BmobActionType)actionType tableName:(NSString *)tableName;
+-(void)cancelListenTableChange:(BmobActionType)actionType tableName:(NSString *)tableName;
 
 /**
  *  取消订阅行的变化事件
@@ -69,7 +69,7 @@
  *  @param tableName  表名
  *  @param objectId   行的objectId
  */
--(void)cancleListenRowChange:(BmobActionType)actionType tableName:(NSString *)tableName objectId:(NSString *)objectId;
+-(void)cancelListenRowChange:(BmobActionType)actionType tableName:(NSString *)tableName objectId:(NSString *)objectId;
 
 @end
 

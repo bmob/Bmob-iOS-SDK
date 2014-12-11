@@ -118,7 +118,7 @@
 /**
  *  取消上传
  */
--(void)cancle;
+-(void)cancel;
 
 
 +(void)filesUploadBatchWithPaths:(NSArray *)pathArray

@@ -6,10 +6,13 @@
 #else
     [Bmob registerWithAppKeyReleaseMode:appKey];
 #endif
+
 2.文件分片上传功能新增进度的方法。进度的范围为（0.0f-1.0f）
 3.新增批量上传的方法
 4.BmobQuery新增-(void)whereKeySExists:(NSArray *)keys;
 和-(void)whereKeysDoesNotExist:(NSArray *)keys; 方法
+
+
 v1.4.9 (2014-10-20)
 1.修复openudid冲突的问题
 v1.4.8 (2014-10-11)

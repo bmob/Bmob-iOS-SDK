@@ -36,12 +36,6 @@
  */
 +(void)registerWithAppKey:(NSString*)appKey;
 
-/**
- *  向Bmob注册应用 (发布 模式)
- *
- *  @param appKey 在网站注册的appkey
- */
-+(void)registerWithAppKeyReleaseMode:(NSString *)appKey;
 
 /**
  *  得到服务器时间戳

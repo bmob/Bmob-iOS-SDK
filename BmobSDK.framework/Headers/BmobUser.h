@@ -101,6 +101,8 @@
  */
 +(void)requestPasswordResetInBackgroundWithEmail:(NSString *)email;
 
+
+
 /**
  *  得到邮箱验证的结果
  *

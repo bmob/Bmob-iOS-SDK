@@ -70,8 +70,11 @@ typedef void (^BmobFileBatchResultBlock)(NSArray *array,BOOL isSuccessful ,NSErr
 
 UIKIT_STATIC_INLINE NSString* Version()
 {
-	return @"1.4.11";
+	return @"1.4.12";
 }
+
+
+
 
 
 

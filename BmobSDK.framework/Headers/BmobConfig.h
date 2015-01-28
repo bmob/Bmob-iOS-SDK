@@ -70,12 +70,32 @@ typedef void (^BmobFileBatchResultBlock)(NSArray *array,BOOL isSuccessful ,NSErr
 
 UIKIT_STATIC_INLINE NSString* Version()
 {
-	return @"1.4.12";
+	return @"1.5.1";
 }
 
 
+//pro
+
+typedef void(^BmobFileResultBlock)(BOOL isSuccessful,NSError *error,NSString *filename,NSString *url);
+typedef void(^BmobFileDownloadResultBlock)(BOOL isSuccessful,NSError *error,NSString *filepath);
+typedef void(^BmobProgressBlock)(CGFloat progress);
+typedef void(^BmobBatchProgressBlock)();
+
+typedef void(^BmobBatchFileUploadResultBlock)(NSArray *filenameArray,NSArray *urlArray,NSError *error);
+typedef void(^BmobIndexAndProgressBlock)(NSUInteger index,CGFloat progress);
+typedef void(^BmobStringBlock)(NSString *filename,BOOL isSuccessful);
+typedef BmobFileDownloadResultBlock BmobLocalImageResultBlock;
+typedef BmobBatchProgressBlock       BmobCompleteBlock ;
 
 
+typedef enum {
+    ThumbnailImageScaleModeWidth    = 1,//指定宽，高自适应，等比例缩放;
+    ThumbnailImageScaleModeHeight   = 2,//指定高， 宽自适应，等比例缩放
+    ThumbnailImageScaleModeLongest  = 3,//指定最长边，短边自适应，等比例缩放;
+    ThumbnailImageScaleModeShortest = 4,//指定最短边，长边自适应，等比例缩放;
+    ThumbnailImageScaleModeMax      = 5,//指定最大宽高， 等比例缩放;
+    ThumbnailImageScaleModeFixed    = 6 //固定宽高， 居中裁剪
+}ThumbnailImageScaleMode;
 
 
 #endif

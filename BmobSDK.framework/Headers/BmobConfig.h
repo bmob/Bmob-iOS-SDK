@@ -14,6 +14,7 @@
 @class BmobGeoPoint;
 @class BmobUser;
 @class BmobFile;
+@class BmobSliceResult;
 
 #ifndef BmobSDK_BmobConfig_h
 #define BmobSDK_BmobConfig_h
@@ -70,7 +71,7 @@ typedef void (^BmobFileBatchResultBlock)(NSArray *array,BOOL isSuccessful ,NSErr
 
 UIKIT_STATIC_INLINE NSString* Version()
 {
-	return @"1.5.1";
+	return @"1.5.2";
 }
 
 
@@ -83,10 +84,11 @@ typedef void(^BmobBatchProgressBlock)();
 
 typedef void(^BmobBatchFileUploadResultBlock)(NSArray *filenameArray,NSArray *urlArray,NSError *error);
 typedef void(^BmobIndexAndProgressBlock)(NSUInteger index,CGFloat progress);
-typedef void(^BmobStringBlock)(NSString *filename,BOOL isSuccessful);
+
 typedef BmobFileDownloadResultBlock BmobLocalImageResultBlock;
 typedef BmobBatchProgressBlock       BmobCompleteBlock ;
 
+typedef void(^BmobSliceResultBlock)(BmobSliceResult *result);
 
 typedef enum {
     ThumbnailImageScaleModeWidth    = 1,//指定宽，高自适应，等比例缩放;
@@ -96,6 +98,9 @@ typedef enum {
     ThumbnailImageScaleModeMax      = 5,//指定最大宽高， 等比例缩放;
     ThumbnailImageScaleModeFixed    = 6 //固定宽高， 居中裁剪
 }ThumbnailImageScaleMode;
+
+
+
 
 
 #endif

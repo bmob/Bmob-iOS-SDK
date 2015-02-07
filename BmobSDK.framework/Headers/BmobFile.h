@@ -100,7 +100,12 @@
  */
 -(void)saveInBackgroundByDataSharding:(BmobBooleanResultBlock)block;
 
-
+/**
+ *  以分片的方式上传文件
+ *
+ *  @param block         返回保存的结果与信息，如果保存成功则无返回信息
+ *  @param progressBlock 上传文件的进度
+ */
 -(void)saveInBackgroundByDataSharding:(BmobBooleanResultBlock)block progressBlock:(void(^)(float progress))progressBlock;
 
 /**
@@ -120,7 +125,13 @@
  */
 -(void)cancel;
 
-
+/**
+ *  批量上传文件
+ *
+ *  @param pathArray 路径数组
+ *  @param progress  当前第几个，当前文件的进度
+ *  @param block     BmobFile数组，上传结果和失败信息
+ */
 +(void)filesUploadBatchWithPaths:(NSArray *)pathArray
                    progressBlock:(BmobFileBatchProgressBlock)progress
                      resultBlock:(BmobFileBatchResultBlock)block;

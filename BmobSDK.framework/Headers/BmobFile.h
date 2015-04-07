@@ -136,4 +136,16 @@
                    progressBlock:(BmobFileBatchProgressBlock)progress
                      resultBlock:(BmobFileBatchResultBlock)block;
 
+
+/**
+ *  批量上传文件
+ *
+ *  @param dataArray 数组中存放的NSDictionary，NSDictionary里面的格式为@{@"filename":@"你的文件名",@"data":图片的data}
+ *  文件名需要带后缀
+ *  @param progress  当前第几个，当前文件的进度
+ *  @param block     BmobFile数组，上传结果和失败信息
+ */
++(void)filesUploadBatchWithDataArray:(NSArray *)dataArray
+                       progressBlock:(BmobFileBatchProgressBlock)progress
+                         resultBlock:(BmobFileBatchResultBlock)block;
 @end

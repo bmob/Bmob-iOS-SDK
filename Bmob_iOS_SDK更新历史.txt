@@ -1,4 +1,16 @@
-﻿v1.5.3 (2015-03-05)
+﻿v1.5.4 (2015-04-07)
+1.增加批量上传方法
+BmobFile
++(void)filesUploadBatchWithDataArray:(NSArray *)dataArray
+                       progressBlock:(BmobFileBatchProgressBlock)progress
+                         resultBlock:(BmobFileBatchResultBlock)block;
+                         
+BmobFilePro
++(void)uploadFilesWithDatas:(NSArray *)dataArray
+                resultBlock:(BmobBatchFileUploadResultBlock)block
+                   progress:(BmobIndexAndProgressBlock)progress;
+2.修复其他问题
+v1.5.3 (2015-03-05)
 1.修复蜂窝网络下可能会出现的使用新版文件上传文件，上传不了的问题
 2.修复在某些情况下用户可能无法更新表内容的问题
 v1.5.2 (2015-02-07)

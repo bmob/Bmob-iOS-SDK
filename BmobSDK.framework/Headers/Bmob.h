@@ -26,6 +26,7 @@
 #import "BmobImage.h"
 #import "BmobEvent.h"
 
+
 /**
  *  初始化成功的通知
  */

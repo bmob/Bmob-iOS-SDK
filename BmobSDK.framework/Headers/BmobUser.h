@@ -168,6 +168,4 @@
  */
 +(BmobUser*)getCurrentUser;
 
-
-
 @end

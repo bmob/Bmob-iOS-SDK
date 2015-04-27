@@ -3,7 +3,7 @@ Bmob iOS SDK
 
 # 快速入门
 
-不知道如何使用Bmob Android SDK的朋友可以移步查看我们为大家准备的快速入门文档：http://docs.bmob.cn/ios/faststart/index.html?menukey=fast_start&key=start_ios
+不知道如何使用Bmob iOS SDK的朋友可以移步查看我们为大家准备的快速入门文档：http://docs.bmob.cn/ios/faststart/index.html?menukey=fast_start&key=start_ios
 
 
 # 在CocoaPod中安装BmobSDK
@@ -12,7 +12,7 @@ Bmob iOS SDK
 
 # 源码说明
 
-`BmobSDK.framework`为Bmob提供的SDK包，当前为1.5.2版本。
+`BmobSDK.framework`为Bmob提供的SDK包，当前为1.5.5版本。
 
 # Bmob官方信息
 

@@ -10,13 +10,15 @@
 #import "BmobObject.h"
 #import "BmobConfig.h"
 #import "BmobGeoPoint.h"
-
+/**
+ * Bmob后台查询类
+ */
 @interface BmobQuery : NSObject
 
 
 
 
-
+//放在这里可以允许用户直接设置
 /**
  *	限制得到多少个结果
  */
@@ -38,6 +40,10 @@
 @property (readwrite, assign) NSTimeInterval maxCacheAge;
 
 
+/**
+ *  统计时是否返回记录数
+ */
+@property BOOL isGroupcount;
 
 
 /**
@@ -225,6 +231,49 @@
 
 -(void)whereKey:(NSString *)key endWithString:(NSString*)end;
 
+#pragma mark 统计查询
+/**
+ * 设置需要计算总和的列名数组
+ * 
+ * @param keys 需要计算总和的列名称数组
+ */
+-(void)sumKeys:(NSArray*)keys;
+
+/**
+ * 设置需要计算平均值的列名数组
+ *
+ * @param keys 需要计算平均值的列名称数组
+ */
+-(void)averageKeys:(NSArray*)keys;
+
+/**
+ * 设置需要计算最大值的列名数组
+ *
+ * @param keys 需要计算最大值的列名称数组
+ */
+-(void)maxKeys:(NSArray*)keys;
+
+/**
+ * 设置需要计算最小值的列名数组
+ *
+ * @param keys 需要计算最小值的列名称数组
+ */
+-(void)minKeys:(NSArray*)keys;
+
+/**
+ * 设置需要分组的列名数组
+ *
+ * @param key 需要计算进行分组的列名称数组
+ */
+-(void)groupbyKeys:(NSArray*)keys;
+
+/**
+ * 设置having条件字典
+ *
+ * @param havingDic having条件字典
+ */
+-(void)constructHavingDic:(NSDictionary*)havingDic;
+
 #pragma mark 地理位置查询
 /**
  *
@@ -254,7 +303,7 @@
 
 /**
  *
- *  
+ *
  *	@param	key	键
  *	@param	geopoint	位置信息
  *	@param	maxDistance	最大半径
@@ -324,15 +373,21 @@
  *	@param	block	得到的BmobObject对象
  */
 -(void)getObjectInBackgroundWithId:(NSString *)objectId
-                              block:(BmobObjectResultBlock)block;
+                             block:(BmobObjectResultBlock)block;
 
 /**
- *	查找BmobObject对象数组
+ *	查找BmobObject对象数组，该方法可查询多条数据
  *
  *	@param	block	得到BmobObject对象数组
  */
 -(void)findObjectsInBackgroundWithBlock:(BmobObjectArrayResultBlock)block;
 
+/**
+ *	统计表数据
+ *
+ *	@param	block 得到字典数组
+ */
+-(void)calcInBackgroundWithBlock:(BmobObjectArrayResultBlock)block;
 
 /**
  *	查找表中符合条件的个数

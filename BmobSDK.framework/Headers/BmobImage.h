@@ -3,7 +3,7 @@
 //  BmobSDK
 //
 //  Created by Bmob on 14-5-23.
-//  Copyright (c) 2014年 donson. All rights reserved.
+//  Copyright (c) 2014年 Bmob. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

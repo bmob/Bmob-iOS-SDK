@@ -43,4 +43,6 @@
 
 -(void)batchObjectsInBackgroundWithResultBlock:(void(^)(BOOL isSuccessful,NSError *error))block;
 
+//再加一个方法
+
 @end

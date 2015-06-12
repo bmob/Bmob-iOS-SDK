@@ -61,6 +61,8 @@
  */
 +(BmobQuery*)queryForUser;
 
+-(id)init;
+
 /**
  *	通过className初始化BmobQuery对象
  *
@@ -391,6 +393,20 @@
 
 #pragma mark BQL 查询方法
 /**
+ *  设置bql语句
+ *
+ *  @param bql bql语句
+ */
+-(void)setBQL:(NSString*)bql;
+
+/**
+ *  设置占位符
+ *
+ *  @param ary 占位符数据
+ */
+-(void)setPlaceholder:(NSArray*)ary;
+
+/**
  *  使用 BQL 异步查询
  *  @param bql BQL 字符串
  *  @param block 查询结果回调
@@ -405,6 +421,13 @@
  *  @param block   查询结果回调
  */
 - (void)queryInBackgroundWithBQL:(NSString *)bql  pvalues:(NSArray*)pvalues block:(BmobBQLObjectResultBlock)block;
+
+/**
+ *  使用BQL异步查询，只有该方法支持异步查询
+ *
+ *  @param block 查询结果回调
+ */
+- (void)queryBQLCanCacheInBackgroundWithblock:(BmobBQLObjectResultBlock)block;
 
 /**
  * 使用 BQL 异步统计查询

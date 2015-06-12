@@ -26,7 +26,8 @@
 #import "BmobImage.h"
 #import "BmobEvent.h"
 #import "BQLQueryResult.h"
-
+#import "BmobObject+Subclass.h"
+#import "BmobMessage.h"
 
 
 /**
@@ -62,6 +63,7 @@ extern NSString *const  kBmobInitFailNotification;
  *  在应用进入前台是调用
  */
 +(void)activateSDK;
+
 
 
 

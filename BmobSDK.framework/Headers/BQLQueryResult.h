@@ -24,6 +24,9 @@
  */
 @property(nonatomic) int count;
 
+- (NSString*)description;
+- (BOOL)isEqual:(BQLQueryResult*)object;
+
 @end
 
 //统计查询使用的回调

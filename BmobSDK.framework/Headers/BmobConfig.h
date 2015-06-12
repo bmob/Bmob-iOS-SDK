@@ -70,7 +70,8 @@ typedef enum {
 
 typedef enum {
     BmobSNSPlatformQQ = 0,          //qq平台
-    BmobSNSPlatformSinaWeibo        //新浪微博
+    BmobSNSPlatformSinaWeibo,        //新浪微博
+    BmobSNSPlatformWeiXin,
 }BmobSNSPlatform;
 
 typedef void (^BmobObjectResultBlock)(BmobObject *object, NSError *error);
@@ -83,11 +84,12 @@ typedef void (^BmobIdResultBlock)(id object, NSError *error);
 typedef void (^BmobFileBlock)(BmobFile *file,NSError *error);
 typedef void (^BmobFileBatchProgressBlock)(int index ,float progress);;
 typedef void (^BmobFileBatchResultBlock)(NSArray *array,BOOL isSuccessful ,NSError *error);
-
+typedef void (^BmobMessageResultBlock)(NSString *requestStatus,NSError *error);
+typedef void (^BmobQuerySMSCodeStateResultBlock)(NSDictionary *dic,NSError *error);
 
 UIKIT_STATIC_INLINE NSString* Version()
 {
-	return @"1.5.7";
+	return @"1.5.8";
 }
 
 

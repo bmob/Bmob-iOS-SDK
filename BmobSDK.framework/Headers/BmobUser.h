@@ -14,8 +14,28 @@
 
 @interface BmobUser : BmobObject
 
+#pragma mark 用户属性设置
+/**
+ *  用户名
+ */
+@property (copy, nonatomic) NSString *username;
 
+/**
+ *  密码
+ */
+@property (copy, nonatomic) NSString *password;
 
+/**
+ *  邮箱
+ */
+@property (copy, nonatomic) NSString *email;
+
+/**
+ *  手机号码
+ */
+@property (copy, nonatomic) NSString *mobilePhoneNumber;
+
+#pragma mark 用户表查询
 /**
  *  查询用户表
  *
@@ -29,25 +49,10 @@
  *
  *	@param	username	提供的用户名
  */
--(void)setUserName:(NSString*)username;
-
-/**
- *	设置密码
- *
- *	@param	password	提供的密码
- */
--(void)setPassword:(NSString*)password;
-
-/**
- *	设置邮箱
- *
- *	@param	email	提供的邮箱
- */
--(void)setEmail:(NSString *)email;
+-(void)setUserName:(NSString*)username __deprecated_msg("Replace by `self.username`");
 
 
-
-
+#pragma mark 用户登录注册操作等相关操作
 /**
  *  用户登陆
  *
@@ -108,6 +113,23 @@
  */
 -(void)userEmailVerified:(BmobBooleanResultBlock)block;
 
+
+/**
+ *	得到当前BmobUser
+ *
+ *	@return	返回BmobUser对象
+ */
++(BmobUser*)getCurrentObject __deprecated_msg("replace by `+(BmobUser*)getCurrentUser;`");
+
+/**
+ *	得到当前BmobUser
+ *
+ *	@return	返回BmobUser对象
+ */
++(BmobUser*)getCurrentUser;
+
+#pragma mark 第三方登录相关操作
+
 /**
  *  第三方授权登录后，在Bmob生成一个bmob用户
  *
@@ -153,21 +175,48 @@
                                       block:(BmobBooleanResultBlock)block;
 
 
+#pragma mark 手机注册登录
+/**
+ *  手机号码加验证码一键注册登录
+ *
+ *  @param phoneNumber <#phoneNumber description#>
+ *  @param smsCode     <#smsCode description#>
+ */
++(void)signOrLoginInbackgroundWithMobilePhoneNumber:(NSString*)phoneNumber
+                                         andSMSCode:(NSString*)smsCode
+                                              block:(BmobUserResultBlock)block;
 
 /**
- *	得到当前BmobUser
+ *  账号密码登录，账号可以为用户名、手机号或者邮箱
  *
- *	@return	返回BmobUser对象
+ *  @param account  <#account description#>
+ *  @param password <#password description#>
+ *  @param block    <#block description#>
  */
-+(BmobUser*)getCurrentObject;
++(void)loginInbackgroundWithAccount:(NSString*)account
+                        andPassword:(NSString*)password
+                              block:(BmobUserResultBlock)block;
 
 /**
- *	得到当前BmobUser
+ *  手机号码加验证码登录
  *
- *	@return	返回BmobUser对象
+ *  @param phoneNumber <#phoneNumber description#>
+ *  @param smsCode     <#smsCode description#>
  */
-+(BmobUser*)getCurrentUser;
++(void)loginInbackgroundWithMobilePhoneNumber:(NSString*)phoneNumber
+                                   andSMSCode:(NSString*)smsCode
+                                        block:(BmobUserResultBlock)block;
 
+/**
+ *  利用短信验证码重置帐号密码，只有填写手机号码的用户可用
+ *
+ *  @param phoneNumber <#phoneNumber description#>
+ *  @param smscode     <#smscode description#>
+ *  @param block       <#block description#>
+ */
++(void)resetPasswordInbackgroundWithSMSCode:(NSString*)SMSCode
+                                              andNewPassword:(NSString*)newPassword
+                                      block:(BmobBooleanResultBlock)block;
 
 
 @end

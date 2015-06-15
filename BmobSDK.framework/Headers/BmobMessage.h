@@ -13,8 +13,9 @@
  *  短信验证码相关接口
  */
 @interface BmobMessage : NSObject
+
 /**
- *  请求验证码
+ *  请求验证码，已遗弃，请使用[BmobSMS requestSMSCodeInBackgroundWithPhoneNumber:number andTemplate:templateStr resultBlock:block]
  *
  *  @param number      手机号
  *  @param templateStr 模板名
@@ -22,23 +23,29 @@
  */
 + (void)requestSMSCodeInBackgroundWithPhoneNumber:(NSString*)number
                                       andTemplate:(NSString*)templateStr
-                                      resultBlock:(BmobIntegerResultBlock)block;
+                                      resultBlock:(BmobIntegerResultBlock)block
+__deprecated_msg("Replace by `[BmobSMS requestSMSCodeInBackgroundWithPhoneNumber:number andTemplate:templateStr resultBlock:block]`");
 
 /**
- *  验证验证码
+ *  验证验证码，已遗弃，请使用[BmobSMS verifySMSCodeInBackgroundWithPhoneNumber:number andSMSCode:code resultBlock:block]
  *
  *  @param number 手机号
  *  @param code   验证码
  *  @param block  回调
  */
-+ (void)verifySMSCodeInBackgroundWithPhoneNumber:(NSString*)number andSMSCode:(NSString*)code resultBlock:(BmobBooleanResultBlock)block;
++ (void)verifySMSCodeInBackgroundWithPhoneNumber:(NSString*)number
+                                      andSMSCode:(NSString*)code
+                                     resultBlock:(BmobBooleanResultBlock)block
+__deprecated_msg("Replace by `[BmobSMS verifySMSCodeInBackgroundWithPhoneNumber:number andSMSCode:code resultBlock:block]`");
 
 /**
- *  查询短信状态
+ *  查询短信状态，已遗弃，请使用[BmobSMS querySMSCodeStateInBackgroundWithSMSId:smsId resultBlock:block]
  *
  *  @param smsId 验证码
  *  @param block 回调
  */
-+ (void)querySMSCodeStateInBackgroundWithSMSId:(unsigned)smsId resultBlock:(BmobQuerySMSCodeStateResultBlock)block;
++ (void)querySMSCodeStateInBackgroundWithSMSId:(unsigned)smsId
+                                   resultBlock:(BmobQuerySMSCodeStateResultBlock)block
+__deprecated_msg("Replace by `[BmobSMS querySMSCodeStateInBackgroundWithSMSId:smsId resultBlock:block]`");
 
 @end

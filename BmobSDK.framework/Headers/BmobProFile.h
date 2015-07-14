@@ -13,51 +13,7 @@
 @interface BmobProFile : NSObject
 
 
-/**
- *  上传文件
- *
- *  @param path          路径
- *  @param block         上传的结果
- *  @param progressBlock 上传的进度
- */
-+(void)uploadFileWithPath:(NSString *)path
-                    block:(BmobFileResultBlock)block
-                 progress:(BmobProgressBlock)progressBlock;
 
-/**
- *  上传文件
- *
- *  @param filename      文件名(带后缀)
- *  @param data          文件的数据
- *  @param block         上传的结果
- *  @param progressBlock 上传的进度
- */
-+(void)uploadFileWithFilename:(NSString *)filename
-                     fileData:(NSData *)data
-                        block:(BmobFileResultBlock)block
-                     progress:(BmobProgressBlock)progressBlock;
-
-/**
- *  批量上传文件
- *
- *  @param array 文件的路径
- */
-+(void)uploadFilesWithPaths:(NSArray *)array
-                resultBlock:(BmobBatchFileUploadResultBlock)block
-                   progress:(BmobIndexAndProgressBlock)progress;
-
-
-/**
- *  批量上传文件
- *
- *  @param dataArray 数组中存放的NSDictionary，NSDictionary里面的格式为@{@"filename":@"你的文件名",@"data":文件的data}
- *  文件名需要带后缀
- *  @param block     上传文件的结果回调
- *  @param progress  上传文件的进度回调，表示当前是第几个，进度多少
- */
-+(void)uploadFilesWithDatas:(NSArray *)dataArray
-                resultBlock:(BmobBatchFileUploadResultBlock)block
-                   progress:(BmobIndexAndProgressBlock)progress;
 
 /**
  *  下载文件
@@ -134,4 +90,70 @@
                        validTime:(int)validTime
                        accessKey:(NSString *)a
                        secretKey:(NSString *)s;
+
+# pragma mark -  得到访问url及删除上传文件
+/**
+ *  得到直接访问文件的url
+ *
+ *  @param uuid  上传文件时得到的uuid
+ *  @param block 返回的回调
+ */
++(void) getFileAcessUrlWithFileName:(NSString*)fileName
+                       callBack:(BmobGetAccessUrlBlock)block;
+
+/**
+ *  删除已上传文件
+ *
+ *  @param uuid  上传文件时得到的uuid
+ *  @param block 返回的回调
+ */
++(void) deleteFileWithFileName:(NSString*)fileName
+                  callBack:(BmobBooleanResultBlock)block;
+
+
+/**
+ *  上传文件
+ *
+ *  @param path          路径
+ *  @param block         上传的结果
+ *  @param progressBlock 上传的进度
+ */
++(void)uploadFileWithPath:(NSString *)path
+                    block:(BmobFileResultBlock)block
+                 progress:(BmobProgressBlock)progressBlock;
+
+/**
+ *  上传文件
+ *
+ *  @param filename      文件名(带后缀)
+ *  @param data          文件的数据
+ *  @param block         上传的结果
+ *  @param progressBlock 上传的进度
+ */
++(void)uploadFileWithFilename:(NSString *)filename
+                     fileData:(NSData *)data
+                        block:(BmobFileResultBlock)block
+                     progress:(BmobProgressBlock)progressBlock;
+
+/**
+ *  批量上传文件
+ *
+ *  @param array 文件的路径
+ */
++(void)uploadFilesWithPaths:(NSArray *)array
+                resultBlock:(BmobBatchFileUploadResultBlock)block
+                   progress:(BmobIndexAndProgressBlock)progress;
+
+
+/**
+ *  批量上传文件
+ *
+ *  @param dataArray 数组中存放的NSDictionary，NSDictionary里面的格式为@{@"filename":@"你的文件名",@"data":文件的data}
+ *  文件名需要带后缀
+ *  @param block     上传文件的结果回调
+ *  @param progress  上传文件的进度回调，表示当前是第几个，进度多少
+ */
++(void)uploadFilesWithDatas:(NSArray *)dataArray
+                resultBlock:(BmobBatchFileUploadResultBlock)block
+                   progress:(BmobIndexAndProgressBlock)progress;
 @end

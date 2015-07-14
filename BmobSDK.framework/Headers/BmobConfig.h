@@ -89,22 +89,28 @@ typedef void (^BmobQuerySMSCodeStateResultBlock)(NSDictionary *dic,NSError *erro
 
 UIKIT_STATIC_INLINE NSString* Version()
 {
-	return @"1.5.8";
+	return @"1.6.0";
 }
 
 
 //pro
 
-typedef void(^BmobFileResultBlock)(BOOL isSuccessful,NSError *error,NSString *filename,NSString *url);
+typedef void(^BmobFileResultBlock)(BOOL isSuccessful,NSError *error,NSString *filename,NSString *url,BmobFile* file);
 typedef void(^BmobFileDownloadResultBlock)(BOOL isSuccessful,NSError *error,NSString *filepath);
 typedef void(^BmobProgressBlock)(CGFloat progress);
 typedef void(^BmobBatchProgressBlock)();
 
-typedef void(^BmobBatchFileUploadResultBlock)(NSArray *filenameArray,NSArray *urlArray,NSError *error);
+typedef void(^BmobBatchFileUploadResultBlock)(NSArray *filenameArray,NSArray *urlArray,NSArray *bmobFileArray,NSError *error);
 typedef void(^BmobIndexAndProgressBlock)(NSUInteger index,CGFloat progress);
+
+//兼容BmobFile,可以得到直接访问url的新文件api使用的回调
+typedef void(^BmobGetAccessUrlBlock)(BmobFile *file,NSError *error);
+typedef void(^BmobGetAccessUrlFileBlock)(NSString *filename,NSString *url,BmobFile *file,NSError *error);
+typedef void(^BmobGetAccessUrlBatchFileUploadResultBlock)(NSArray *filenameArray,NSArray *urlArray,NSArray *bmobFileArray,NSError *error);
 
 typedef BmobFileDownloadResultBlock BmobLocalImageResultBlock;
 typedef BmobBatchProgressBlock       BmobCompleteBlock ;
+
 
 typedef void(^BmobSliceResultBlock)(BmobSliceResult *result);
 

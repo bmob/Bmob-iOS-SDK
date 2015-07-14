@@ -117,6 +117,14 @@
 -(void)whereKey:(NSString *)key equalTo:(id)object;
 
 /**
+ *  添加查询列类型为数组的约束条件，只有数组当中包含array的所有元素才匹配
+ *
+ *  @param key   类型为数组的列名
+ *  @param array 需要匹配的元素数组
+ */
+-(void)whereKey:(NSString *)key containsAll:(NSArray*)array;
+
+/**
  *	添加key的值不为object的约束条件
  *
  *	@param	key	键

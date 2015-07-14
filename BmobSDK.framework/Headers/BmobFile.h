@@ -29,6 +29,7 @@
 @property(nonatomic,copy)NSString  *group;
 
 
+
 /*!
  DEPRECATED: 使用-(id)initWithFilePath:(NSString*)filePath;代替
  */
@@ -135,4 +136,6 @@
 +(void)filesUploadBatchWithDataArray:(NSArray *)dataArray
                        progressBlock:(BmobFileBatchProgressBlock)progress
                          resultBlock:(BmobFileBatchResultBlock)block;
+
+
 @end

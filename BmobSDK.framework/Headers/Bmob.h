@@ -65,6 +65,8 @@ extern NSString *const  kBmobInitFailNotification;
  */
 +(void)activateSDK;
 
++(void)setBmobRequestTimeOut:(CGFloat)seconds;
+
 
 
 

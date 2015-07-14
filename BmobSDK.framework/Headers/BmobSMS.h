@@ -13,6 +13,22 @@
  *  短信验证码相关接口
  */
 @interface BmobSMS : NSObject
+
+
+/**
+ *  请求短信信息
+ *
+ *  @param number   电话号码
+ *  @param content  短信内容
+ *  @param sendTime 发送时间（可为空）
+ *  @param block    返回结果，含smsId,可用于查询短信发送状态
+ */
++ (void)requestSMSInbackgroundWithPhoneNumber:(NSString*)number
+                                      Content:(NSString*)content
+                                  andSendTime:(NSString*)sendTime
+                                  resultBlock:(BmobIntegerResultBlock)block;
+
+
 /**
  *  请求验证码
  *

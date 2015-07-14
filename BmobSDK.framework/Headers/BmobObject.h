@@ -219,4 +219,5 @@
 - (BOOL)isEqual:(BmobObject*)object;
 - (NSString*)description;
 
+
 @end

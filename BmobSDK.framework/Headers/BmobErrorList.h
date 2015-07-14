@@ -37,7 +37,8 @@ typedef enum {
     BmobErrorTypeNullBlock           = 20026,  //异步查询时，没有传入block，无法返回结果
     BmobErrorTypeErrorPara           = 20027,  //传的参数有错，一般是传入空字符串造成
     BmobErrorTypeInvalidMobilePhoneNumber = 20028,  //非法手机号
-    BmobErrorTypeInvalidSMSCode      = 20029   //非法验证码
+    BmobErrorTypeInvalidSMSCode      = 20029,   //非法验证码
+    BmobErrorTypeFileNotExist        = 20030   //获取文件url、删除文件时传入的文件名不存在
     
 }BmobErrorType;
 

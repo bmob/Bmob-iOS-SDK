@@ -41,6 +41,7 @@ pod 'BmobSDK'
 pod install
 ```
 
-安装完成之后，你就可以在项目中使用BmobSDK开发了。
+安装完成之后，点击下图框中的.xcworkplace文件来打开项目，接下来你就可以在项目中使用BmobSDK开发了。
 
-需要注意的是:如果提示缺少类库，需要添加libz.1.2.5.dylib、libicucore.dylib、libsqlite3.dylib
+![](images/project.png)
+

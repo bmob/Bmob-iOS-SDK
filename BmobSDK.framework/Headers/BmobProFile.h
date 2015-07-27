@@ -7,9 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-//#import "Config.h"
 #import "BmobConfig.h"
 
+
+/**
+ *  提供文件相关功能接口
+ */
 @interface BmobProFile : NSObject
 
 

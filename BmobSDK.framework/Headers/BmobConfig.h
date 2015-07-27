@@ -15,6 +15,7 @@
 @class BmobUser;
 @class BmobFile;
 @class BmobSliceResult;
+@class BmobTableSchema;
 
 #ifndef BmobSDK_BmobConfig_h
 #define BmobSDK_BmobConfig_h
@@ -86,10 +87,12 @@ typedef void (^BmobFileBatchProgressBlock)(int index ,float progress);;
 typedef void (^BmobFileBatchResultBlock)(NSArray *array,BOOL isSuccessful ,NSError *error);
 typedef void (^BmobMessageResultBlock)(NSString *requestStatus,NSError *error);
 typedef void (^BmobQuerySMSCodeStateResultBlock)(NSDictionary *dic,NSError *error);
+typedef void (^BmobTableSchemasBlock)(BmobTableSchema *bmobTableScheme,NSError *error);
+typedef void (^BmobAllTableSchemasBlock)(NSArray *tableSchemasArray,NSError *error);
 
 UIKIT_STATIC_INLINE NSString* Version()
 {
-	return @"1.6.0";
+	return @"1.6.1";
 }
 
 

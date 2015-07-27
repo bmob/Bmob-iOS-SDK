@@ -175,7 +175,7 @@
                                       block:(BmobBooleanResultBlock)block;
 
 
-#pragma mark 手机注册登录
+#pragma mark - 手机注册登录
 /**
  *  手机号码加验证码一键注册登录
  *

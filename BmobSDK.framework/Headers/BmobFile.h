@@ -137,5 +137,4 @@
                        progressBlock:(BmobFileBatchProgressBlock)progress
                          resultBlock:(BmobFileBatchResultBlock)block;
 
-
 @end

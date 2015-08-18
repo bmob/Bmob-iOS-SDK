@@ -71,4 +71,8 @@ extern NSString *const  kBmobInitFailNotification;
 + (void)getAllTableSchemasWithCallBack:(BmobAllTableSchemasBlock)block;
 
 + (void)getTableSchemasWithClassName:(NSString*)tableName callBack:(BmobTableSchemasBlock)block;
+
+
+
+
 @end

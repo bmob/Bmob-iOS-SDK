@@ -128,7 +128,16 @@
  */
 +(BmobUser*)getCurrentUser;
 
-#pragma mark 第三方登录相关操作
+/**
+ *  利用旧密码重置新密码
+ *
+ *  @param oldPassword 旧密码
+ *  @param newPassword 新密码
+ *  @param block       回调
+ */
+- (void)updateCurrentUserPasswordWithOldPassword:(NSString *)oldPassword newPassword:(NSString *)newPassword block:(BmobBooleanResultBlock)block;
+
+#pragma mark - 第三方登录相关操作
 
 /**
  *  第三方授权登录后，在Bmob生成一个bmob用户
@@ -185,6 +194,27 @@
 +(void)signOrLoginInbackgroundWithMobilePhoneNumber:(NSString*)phoneNumber
                                          andSMSCode:(NSString*)smsCode
                                               block:(BmobUserResultBlock)block;
+
+/**
+ *  手机号码加验证码一键注册登录并且设置用户密码
+ *
+ *  @param phoneNumber 手机号
+ *  @param smsCode     验证码
+ *  @param password    用户密码
+ *  @param block       回调
+ */
++(void)signOrLoginInbackgroundWithMobilePhoneNumber:(NSString*)phoneNumber
+                                             SMSCode:(NSString*)smsCode
+                                         andPassword:(NSString *)password
+                                               block:(BmobUserResultBlock)block;
+
+/**
+ *  手机号码加验证码一键注册登录，并且可设置用户表的其它信息
+ *
+ *  @param smsCode 验证码
+ */
+- (void)signUpOrLoginInbackgroundWithSMSCode:(NSString *)smsCode
+                                       block:(BmobBooleanResultBlock)block;
 
 /**
  *  账号密码登录，账号可以为用户名、手机号或者邮箱

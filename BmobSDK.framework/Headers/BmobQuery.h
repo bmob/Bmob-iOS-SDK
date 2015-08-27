@@ -348,6 +348,13 @@
  */
 -(void)queryWithAllConstraint:(NSDictionary*)conDictionary;
 
+/**
+ *  构造查询条件，可以与其他方法同时存在
+ *
+ *  @param dictionary 查询条件
+ */
+-(void)queryWithConstraint:(NSDictionary *)dictionary;
+
 #pragma mark 缓存方面的函数
 
 /**

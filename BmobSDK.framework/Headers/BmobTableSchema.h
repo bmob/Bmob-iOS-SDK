@@ -10,14 +10,8 @@
 
 @interface BmobTableSchema : NSObject
 
-/**
- *  表名
- */
 @property (nonatomic,readonly,copy) NSString *className; /**< 表名 */
 
-/**
- * 表结构，结构{@"列名":结构字典}
- */
 @property (nonatomic,readonly,copy) NSDictionary *fields; /**< 表结构，结构{@"列名":结构字典} */
 
 /**

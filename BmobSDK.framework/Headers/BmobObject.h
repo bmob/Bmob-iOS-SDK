@@ -25,12 +25,12 @@
 /**
  *	 BmobObject对象的最后更新时间
  */
-@property(nonatomic,retain)NSDate *updatedAt;
+@property(nonatomic,strong)NSDate *updatedAt;
 
 /**
  *	 BmobObject对象的生成时间
  */
-@property(nonatomic,retain)NSDate *createdAt;
+@property(nonatomic,strong)NSDate *createdAt;
 
 /**
  *  BmobObject对象的表名
@@ -41,7 +41,7 @@
 /**
  *  权限控制里列表
  */
-@property(nonatomic,retain)BmobACL *ACL;
+@property(nonatomic,strong)BmobACL *ACL;
 
 
 /**
@@ -72,6 +72,17 @@
  *	@return	BmobObject
  */
 -(id)initWithClassName:(NSString*)className;
+
+
+
+/**
+ *  从字典创建BmobObject
+ *
+ *  @param dictionary 字典
+ *
+ *  @return BmobObject 对象
+ */
+-(instancetype)initWithDictionary:(NSDictionary *)dictionary;
 
 /**
  *	向BmobObject对象添加数据
@@ -218,7 +229,5 @@
 
 - (BOOL)isEqual:(BmobObject*)object;
 - (NSString*)description;
-
-
 
 @end

@@ -45,7 +45,7 @@
  *
  *  @return 子类的对象
  */
--(instancetype)initFromBmobOjbect:(BmobObject *)obj;
+-(instancetype)initFromBmobObject:(BmobObject *)obj;
 
 @end
 

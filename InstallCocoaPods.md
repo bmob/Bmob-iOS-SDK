@@ -11,7 +11,7 @@
 ```
 $ sudo gem sources --remove https://rubygems.org/
 //等有反应之后再敲入以下命令
-$ sudo gem sources -a http://ruby.taobao.org/
+$ sudo gem sources -a https://ruby.taobao.org/
 $ sudo gem install cocoapods
 
 ```
@@ -21,6 +21,15 @@ $ sudo gem install cocoapods
 ![](images/install.png)
 
 如果在安装CocoaPods的过程中有任何问题，可以查看文档：http://code4app.com/article/cocoapods-install-usage
+
+**注意**
+在OS X 10.11之前的版本可以添加的是 `http://ruby.taobao.org/`(http而不是https) 这个源,需要进行以下操作，
+
+```
+$ sudo gem sources --remove http://ruby.taobao.org/
+$ sudo gem sources -a https://ruby.taobao.org/
+$ sudo gem install cocoapods
+```
 
 ## 安装BmobSDK
 

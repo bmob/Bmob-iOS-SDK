@@ -12,12 +12,12 @@
 /**
  *  查询结果的 className
  */
-@property(nonatomic, strong) NSString *className;
+@property(nonatomic, copy) NSString *className;
 
 /**
  *  查询的结果 BmobObject 对象列表
  */
-@property(nonatomic, strong) NSArray *resultsAry;
+@property(nonatomic, copy) NSArray *resultsAry;
 
 /**
  *  查询 count 结果, 只有使用 select count(*) ... 时该值信息才是有效的

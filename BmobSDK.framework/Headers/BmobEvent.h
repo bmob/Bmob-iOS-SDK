@@ -15,7 +15,7 @@
     
 }
 
-@property(assign)id<BmobEventDelegate>delegate;
+@property(weak,nonatomic)id<BmobEventDelegate>delegate;
 
 
 -(instancetype)init;

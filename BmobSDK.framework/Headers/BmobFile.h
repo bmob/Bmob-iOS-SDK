@@ -59,11 +59,6 @@
  */
 -(id)initWithFileName:(NSString*)fileName  withFileData:(NSData*)data;
 
-/**
- *	上传文件并保存,使用同步的方法保存，故
- *  请勿在GCD使用该方法
- */
--(BOOL)save;
 
 /**
  *  异步上传文件并保存

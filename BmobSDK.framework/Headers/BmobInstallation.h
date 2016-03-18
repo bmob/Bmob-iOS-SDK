@@ -39,7 +39,7 @@
 @property (nonatomic,copy   ) NSString *deviceType;
 @property (nonatomic,copy   ) NSString *deviceToken;
 @property (nonatomic,assign ) int      badge;
-@property (nonatomic, strong) NSArray  *channels;
+@property (nonatomic, copy) NSArray  *channels;
 
 /**
  *  注册订阅频道

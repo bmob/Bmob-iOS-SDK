@@ -43,13 +43,7 @@
  */
 +(BmobQuery *)query;
 
-#pragma mark set
-/**
- *	设置用户名
- *
- *	@param	username	提供的用户名
- */
--(void)setUserName:(NSString*)username __deprecated_msg("Replace by `self.username`");
+
 
 
 #pragma mark 用户登录注册操作等相关操作

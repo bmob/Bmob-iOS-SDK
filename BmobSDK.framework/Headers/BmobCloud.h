@@ -12,15 +12,6 @@
 @interface BmobCloud : NSObject
 
 
-/**
- *  传入参数同步调用云函数
- *
- *  @param function   函数名
- *  @param parameters 传递给函数的参数
- *
- *  @return 云函数响应结果
- */
-+(id)callFunction:(NSString *)function withParameters:(NSDictionary *)parameters;
 
 /**
  *  异步调用云函数

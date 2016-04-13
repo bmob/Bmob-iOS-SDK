@@ -23,16 +23,14 @@
 #import "BmobInstallation.h"
 #import "BmobACL.h"
 #import "BmobRole.h"
-#import "BmobImage.h"
 #import "BmobEvent.h"
 #import "BQLQueryResult.h"
 #import "BmobObject+Subclass.h"
-#import "BmobMessage.h"
 #import "BmobSMS.h"
 #import "BmobTableSchema.h"
 
 /**
- *  初始化成功的通知，注册该通知可以在初始化成功后执行需要的动作，最新版本的初始化过程已经修改成同步，因此该通过可以不作处理
+ *  初始化成功的通知
  */
 extern NSString *const  kBmobInitSuccessNotification;
 

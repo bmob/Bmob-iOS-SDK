@@ -26,7 +26,15 @@
  *
  *  @return BmobInstallation实例
  */
-+(instancetype)currentInstallation;
++(instancetype)currentInstallation __deprecated_msg("replace by `+(instancetype)installation;`");
+
+
+/**
+ * BmobInstallation实例
+ *
+ *  @return BmobInstallation实例
+ */
++(instancetype)installation ;
 
 /**
  *  绑定设备DeviceToken

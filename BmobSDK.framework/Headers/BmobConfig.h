@@ -14,7 +14,6 @@
 @class BmobGeoPoint;
 @class BmobUser;
 @class BmobFile;
-@class BmobSliceResult;
 @class BmobTableSchema;
 
 #ifndef BmobSDK_BmobConfig_h
@@ -94,7 +93,7 @@ typedef BmobFileBatchResultBlock BmobFilesDeleteBlock;
 
 UIKIT_STATIC_INLINE NSString* Version()
 {
-	return @"1.6.9";
+	return @"1.7.0";
 }
 
 
@@ -102,7 +101,20 @@ typedef void(^BmobProgressBlock)(CGFloat progress);
 typedef void(^BmobBatchFileUploadResultBlock)(NSArray *filenameArray,NSArray *urlArray,NSArray *bmobFileArray,NSError *error);
 typedef void(^BmobIndexAndProgressBlock)(NSUInteger index,CGFloat progress);
 
+typedef void(^BmobFileDownloadResultBlock)(BOOL isSuccessful,NSError *error,NSString *filepath);
+typedef BmobFileDownloadResultBlock BmobLocalImageResultBlock;
+typedef void (^BmobCompleteBlock)();
+typedef void(^BmobGetAccessUrlBlock)(BmobFile *file,NSError *error);
+typedef void(^BmobFileResultBlock)(BOOL isSuccessful,NSError *error,NSString *filename,NSString *url,BmobFile* file);
 
+typedef enum {
+    ThumbnailImageScaleModeWidth    = 1,//指定宽，高自适应，等比例缩放;
+    ThumbnailImageScaleModeHeight   = 2,//指定高， 宽自适应，等比例缩放
+    ThumbnailImageScaleModeLongest  = 3,//指定最长边，短边自适应，等比例缩放;
+    ThumbnailImageScaleModeShortest = 4,//指定最短边，长边自适应，等比例缩放;
+    ThumbnailImageScaleModeMax      = 5,//指定最大宽高， 等比例缩放;
+    ThumbnailImageScaleModeFixed    = 6 //固定宽高， 居中裁剪
+}ThumbnailImageScaleMode;
 
 
 

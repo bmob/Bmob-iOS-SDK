@@ -51,7 +51,7 @@ extern NSString *const  kBmobInitFailNotification;
 
 
 /**
- *  得到服务器时间戳
+ *  得到服务器时间戳 ,需要在子线程调用
  *
  *  @return 时间戳字符串 (到秒)
  */
@@ -70,7 +70,28 @@ extern NSString *const  kBmobInitFailNotification;
  */
 +(void)activateSDK;
 
+#pragma mark - 配置
+
+/**
+ *  设置接口请求超时时间
+ *
+ *  @param seconds 多少秒
+ */
 +(void)setBmobRequestTimeOut:(CGFloat)seconds;
+
+/**
+ *  设置文件分块上传大小，不可小于100kb, 不超过5M
+ *
+ *  @param blockSize 块大小 单位 字节
+ */
++(void)setBlockSize:(NSUInteger)blockSize;
+
+/**
+ *  设置文件分块上传授权时间，默认 1800秒
+ *
+ *  @param seconds 秒
+ */
++(void)setUploadExpiresIn:(NSUInteger)seconds;
 
 # pragma mark - 获取表结构
 + (void)getAllTableSchemasWithCallBack:(BmobAllTableSchemasBlock)block;

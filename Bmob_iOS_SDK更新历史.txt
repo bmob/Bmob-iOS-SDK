@@ -1,3 +1,9 @@
+v1.7.0 (2016-04-22)
+1.恢复BmobProFile文件下载的功能
+2.恢复云端代码同步接口（请在子线程使用），新增+(id)callFunction:(NSString *)function withParameters:(NSDictionary *)parameters error:(NSError **)error;返回错误信息
+3.Bmob类新增设置文件上传的授权时间和分片大小
+4.BmobInstallation类去掉currentInstallation(命名让人误会)，用installation代替(单纯创建一个BmobInstallation对象).
+
 v1.6.9 (2016-04-14)
 1.文件服务更换为CDN上传,废除新旧文件上传服务
 2.新增文件批量删除接口

@@ -93,7 +93,7 @@ typedef BmobFileBatchResultBlock BmobFilesDeleteBlock;
 
 UIKIT_STATIC_INLINE NSString* Version()
 {
-	return @"1.7.0";
+	return @"1.7.1";
 }
 
 
@@ -106,6 +106,8 @@ typedef BmobFileDownloadResultBlock BmobLocalImageResultBlock;
 typedef void (^BmobCompleteBlock)();
 typedef void(^BmobGetAccessUrlBlock)(BmobFile *file,NSError *error);
 typedef void(^BmobFileResultBlock)(BOOL isSuccessful,NSError *error,NSString *filename,NSString *url,BmobFile* file);
+
+
 
 typedef enum {
     ThumbnailImageScaleModeWidth    = 1,//指定宽，高自适应，等比例缩放;

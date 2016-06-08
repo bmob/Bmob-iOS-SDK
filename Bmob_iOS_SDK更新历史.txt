@@ -1,3 +1,10 @@
+v1.7.1 (2016-06-08)
+1.修改BmobQuery 取消方法错误拼写
+2.修改BmobObject objectWithoutDatatWithClassName方法拼写错误
+3.BmobObject+subclass 增加+(instancetype)covertWithObject:(BmobObject *)obj; 方便在swift调用
+4.修复更新个人资料可能会报用户名已存在的问题
+5.修复有ACL导致的更新不成功的问题
+
 v1.7.0 (2016-04-22)
 1.恢复BmobProFile文件下载的功能
 2.恢复云端代码同步接口（请在子线程使用），新增+(id)callFunction:(NSString *)function withParameters:(NSDictionary *)parameters error:(NSError **)error;返回错误信息

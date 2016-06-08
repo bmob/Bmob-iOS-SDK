@@ -40,16 +40,6 @@
 +(void)cleanCache;
 
 
-/**
- *  本地缩略图处理
- *
- *  @param filepath 图片的路径
- *  @param ruleID   规格ID
- *  @param block    处理的结果信息，包括是否成功，错误信息，文件的地址
- */
-+(void)localThumbnailImageWithFilepath:(NSString *)filepath
-                                ruleID:(NSUInteger)ruleID
-                           resultBlock:(BmobLocalImageResultBlock)block;
 
 /**
  *  本地缩略图处理

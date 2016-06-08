@@ -52,14 +52,14 @@
 -(instancetype)initFromBmobObject:(BmobObject *)obj  ;
 
 /**
- *  把bmobobject对象转成子类，对BmobObject，BmobUser，BmobRole，BmobInstallation的子类有效，swift中使用这个方法
+ *  把bmobobject对象转成子类，对BmobObject，BmobUser，BmobRole，BmobInstallation的子类有效
  *
  *  @param obj    BmobObject对象
  *  @param kClass 父类的class
  *
  *  @return 子类的对象
  */
-+(instancetype)covertWithObject:(BmobObject *)obj;
++(instancetype)convertWithObject:(BmobObject *)obj;
 
 @end
 

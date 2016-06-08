@@ -131,5 +131,4 @@
  */
 +(void)filesDeleteBatchWithArray:(NSArray <NSString *>*)urls
                      resultBlock:(BmobFilesDeleteBlock)block;
-
 @end

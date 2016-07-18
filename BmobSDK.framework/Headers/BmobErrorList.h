@@ -11,6 +11,9 @@
 
 
 typedef enum {
+    BmobErrorTypeUnauthorized        = 401,   //未通过验证
+    BmobErrorTypeForbidden           = 403,   //拒绝执行
+    BmobErrorTypePageNotFound        = 404,   //找不到网页
     BmobErrorTypeNullPassword        = 20000, //登录或者注册时输入的密码为空。
     BmobErrorTypeNullUsername        = 20001, //登录或者注册时输入的用户名为空。
     BmobErrorTypeConnectFailed       = 20002, //connect failed!
@@ -38,8 +41,8 @@ typedef enum {
     BmobErrorTypeErrorPara           = 20027,  //传的参数有错，一般是传入空字符串造成
     BmobErrorTypeInvalidMobilePhoneNumber = 20028,  //非法手机号
     BmobErrorTypeInvalidSMSCode      = 20029,   //非法验证码
-    BmobErrorTypeFileNotExist        = 20030   //获取文件url、删除文件时传入的文件名不存在
-    
+    BmobErrorTypeFileNotExist        = 20030,   //获取文件url、删除文件时传入的文件名不存在
+    BmobErrorTypeNullEmail           = 20031   //邮箱地址为空
 }BmobErrorType;
 
 

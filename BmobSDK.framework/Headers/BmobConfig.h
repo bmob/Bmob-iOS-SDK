@@ -91,9 +91,9 @@ typedef void (^BmobAllTableSchemasBlock)(NSArray *tableSchemasArray,NSError *err
 
 typedef BmobFileBatchResultBlock BmobFilesDeleteBlock;
 
-UIKIT_STATIC_INLINE NSString* Version()
+UIKIT_STATIC_INLINE NSString* BmobSDKVersion()
 {
-	return @"1.7.1";
+	return @"1.7.2";
 }
 
 

@@ -87,18 +87,36 @@
 -(void)signUpInBackgroundWithBlock:(BmobBooleanResultBlock)block;
 
 /**
- *  邮件认证，在web端应用设置中又开启邮箱验证
+ *  邮件认证，在web端应用设置中有开启邮箱验证
  *
  *  @param email 邮箱地址
  */
 -(void)verifyEmailInBackgroundWithEmailAddress:(NSString *)email;
 
 /**
+ *  请求邮件验证接口，在web端应用设置中有开启邮箱验证
+ *
+ *  @param email 邮箱地址
+ *  @param block 请求的结果信息
+ */
+-(void)verifyEmailInBackgroundWithEmailAddress:(NSString *)email
+                                         block:(BmobBooleanResultBlock)block;
+
+/**
  *	通过邮件设置密码
  *
- *	@param	email	提供的邮件地址
+ *	@param	email	邮箱地址
  */
 +(void)requestPasswordResetInBackgroundWithEmail:(NSString *)email;
+
+/**
+ *  通过邮件设置密码
+ *
+ *  @param email 邮箱地址
+ *  @param block 请求的结果信息
+ */
++(void)requestPasswordResetInBackgroundWithEmail:(NSString *)email
+                                           block:(BmobBooleanResultBlock)block;
 
 /**
  *  得到邮箱验证的结果
@@ -109,18 +127,18 @@
 
 
 /**
- *	得到当前BmobUser
+ *	得到当前BmobUser，每次调用都会生成一个新的对象，不是单例
  *
  *	@return	返回BmobUser对象
  */
-+(BmobUser*)getCurrentObject __deprecated_msg("replace by `+(BmobUser*)getCurrentUser;`");
++(BmobUser*)currentUser;
 
 /**
  *	得到当前BmobUser
  *
  *	@return	返回BmobUser对象
  */
-+(BmobUser*)getCurrentUser;
++(BmobUser*)getCurrentUser __deprecated_msg("replace by `+(BmobUser*)currentUser;`");
 
 /**
  *  利用旧密码重置新密码

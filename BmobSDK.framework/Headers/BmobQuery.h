@@ -193,7 +193,7 @@
  *
  *  @param keys 多个列组成的数组
  */
--(void)whereKeySExists:(NSArray *)keys;
+-(void)whereKeysExists:(NSArray *)keys;
 
 
 /**

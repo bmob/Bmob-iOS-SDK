@@ -14,7 +14,6 @@
  */
 @interface BmobSMS : NSObject
 
-
 /**
  *  请求短信信息
  *
@@ -27,7 +26,6 @@
                                       Content:(NSString*)content
                                   andSendTime:(NSString*)sendTime
                                   resultBlock:(BmobIntegerResultBlock)block;
-
 
 /**
  *  请求验证码
@@ -55,6 +53,6 @@
  *  @param smsId 验证码
  *  @param block 回调
  */
-+ (void)querySMSCodeStateInBackgroundWithSMSId:(unsigned)smsId resultBlock:(BmobQuerySMSCodeStateResultBlock)block;
++ (void)querySMSCodeStateInBackgroundWithSMSId:(int)smsId resultBlock:(BmobQuerySMSCodeStateResultBlock)block;
 
 @end

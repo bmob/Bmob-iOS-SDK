@@ -13,7 +13,7 @@ Bmob iOS SDK
 # 源码说明
 
 
-`BmobSDK.framework`为Bmob提供的SDK包，当前为1.7.2版本。
+`BmobSDK.framework`为Bmob提供的SDK包，当前为1.7.3版本。
 
 
 # Bmob官方信息

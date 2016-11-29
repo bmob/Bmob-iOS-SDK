@@ -242,4 +242,9 @@
  */
 -(void)deleteInBackgroundWithBlock:(BmobBooleanResultBlock)block;
 
+
+- (BOOL)isEqual:(BmobObject*)object;
+- (NSString*)description;
+
+
 @end

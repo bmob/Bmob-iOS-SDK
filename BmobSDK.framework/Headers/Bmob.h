@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 
-//包含头文件
 #import "BmobObject.h"
 #import "BmobFile.h"
 #import "BmobGeoPoint.h"

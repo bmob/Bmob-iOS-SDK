@@ -29,14 +29,14 @@
 /**
  *  设置多个订阅频道
  *
- *  @param channel 多个订阅频道放在数组里面
+ *  @param channels 多个订阅频道放在数组里面
  */
 -(void)setChannels:(NSArray *)channels;
 
 /**
  *  设置单个订阅频道
  *
- *  @param channels 订阅的频道
+ *  @param channel 订阅的频道
  */
 -(void)setChannel:(NSString *)channel;
 

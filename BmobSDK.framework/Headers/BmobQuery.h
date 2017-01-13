@@ -266,7 +266,7 @@
 /**
  * 设置需要分组的列名数组
  *
- * @param key 需要计算进行分组的列名称数组
+ * @param keys 需要计算进行分组的列名称数组
  */
 -(void)groupbyKeys:(NSArray*)keys;
 

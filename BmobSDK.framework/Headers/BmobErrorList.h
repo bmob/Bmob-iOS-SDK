@@ -9,7 +9,6 @@
 #ifndef BmobSDK_BmobErrorList_h
 #define BmobSDK_BmobErrorList_h
 
-
 typedef enum {
     BmobErrorTypeUnauthorized        = 401,   //未通过验证
     BmobErrorTypeForbidden           = 403,   //拒绝执行

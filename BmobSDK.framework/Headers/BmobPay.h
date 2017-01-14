@@ -44,8 +44,8 @@ typedef void (^BmobPayResultBlock) (NSDictionary *resultDic, NSError *error);
 
  @param payType 支付类型选择，暂时只支持支付宝付款，接口类型预留
  @param price 订单价格，限额 0-5000
- @param orderName 订单名称，不为空
- @param describe 订单描述，不为空
+ @param orderName 订单名称
+ @param describe 订单描述
  @param result 支付回调
  */
 + (void)payWithPayType:(BmobPayType)payType

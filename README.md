@@ -1,7 +1,28 @@
-Bmob iOS SDK
-================
+<link rel="stylesheet" href="http://yandex.st/highlightjs/6.2/styles/googlecode.min.css">
+ 
+<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+<script src="http://yandex.st/highlightjs/6.2/highlight.min.js"></script>
+ 
+<script>hljs.initHighlightingOnLoad();</script>
+<script type="text/javascript">
+ $(document).ready(function(){
+      $("h2,h3,h4,h5,h6").each(function(i,item){
+        var tag = $(item).get(0).localName;
+        $(item).attr("id","wow"+i);
+        $("#category").append('<a class="new'+tag+'" href="#wow'+i+'">'+$(this).text()+'</a></br>');
+        $(".newh2").css("margin-left",0);
+        $(".newh3").css("margin-left",20);
+        $(".newh4").css("margin-left",40);
+        $(".newh5").css("margin-left",60);
+        $(".newh6").css("margin-left",80);
+      });
+ });
+</script>
+<div id="category"></div>
 
-## 快速入门
+# Bmob iOS SDK
+
+### 快速入门
 
 不知道如何使用Bmob iOS SDK的朋友可以移步查看我们为大家准备的 [快速入门文档](http://docs.bmob.cn/ios/faststart/index.html?menukey=fast_start&key=start_ios)。
 
@@ -62,7 +83,7 @@ pod install
 
 ![](Resourse/project.png)
 
-## Bmob官方信息
+### Bmob官方信息
 
 官方网址：[http://www.bmob.cn](http://www.bmob.cn)
 

@@ -11,6 +11,6 @@ Pod::Spec.new do |s|
   s.vendored_framework = "**/BmobSDK.framework"
   s.requires_arc = true
   s.frameworks = "CoreLocation","Security","CoreGraphics","MobileCoreServices","CFNetwork","CoreTelephony","SystemConfiguration"
-  s.libraries = "z.1.2.5", "icucore","sqlite3"
+  s.libraries = "z.1.2.5", "icucore","sqlite3","c++"
 
 end

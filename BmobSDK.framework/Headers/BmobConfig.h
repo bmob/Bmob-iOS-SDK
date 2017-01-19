@@ -93,7 +93,7 @@ typedef BmobFileBatchResultBlock BmobFilesDeleteBlock;
 
 UIKIT_STATIC_INLINE NSString* BmobSDKVersion()
 {
-	return @"2.0.6";
+	return @"1.7.4";
 }
 
 

@@ -21,18 +21,21 @@
  | 4005 | 应用未安装 |
  | 4006 | 取消付款 |
  | 4007 | 价格超出限额 |
- ----------------
+ | 4008 | 获取支付参数错误，请稍后重试 |
+ --------------------
  | 其他  | - 请查看返回信息 - |
  */
 
 @interface BmobPay : NSObject
 
 /**
- 支付类型选择，暂时只支持支付宝付款
+ 支付类型选择
  
+ - BmobWechat: 微信付款
  - BmobAlipay: 支付宝付款
  */
 typedef NS_ENUM(NSInteger, BmobPayType) {
+    BmobWechat = 0,
     BmobAlipay = 3
 };
 
@@ -42,7 +45,7 @@ typedef void (^BmobPayResultBlock) (NSDictionary *resultDic, NSError *error);
 /**
  调用支付接口
  
- @param payType 支付类型选择，暂时只支持支付宝付款，接口类型预留
+ @param payType 支付类型选择
  @param price 订单价格，限额 0-5000
  @param orderName 订单名称
  @param describe 订单描述

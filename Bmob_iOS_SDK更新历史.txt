@@ -1,3 +1,26 @@
+v2.1.0 (2018-1-20)
+1.修复模块重复问题
+
+v2.0.8 (2018-1-19)
+1.添加微信支付功能
+
+v2.0.7 (2018-1-18)
+1.Bug修复
+
+v2.0.6 (2017-1-17)
+1.Bug修复
+
+v2.0.5 (2017-1-17)
+1.Bug修复
+2.取消xib，该用纯代码实现支付界面
+3.扩展iOS6-iOS7支持
+
+v2.0.4 (2017-1-14)
+1.Bug修复
+
+v2.0.3 (2017-1-14)
+1.Bug修复
+
 v2.0.2 (2017-1-13)
 1.添加支付宝支付
 
@@ -113,7 +136,7 @@ BmobFile
 +(void)filesUploadBatchWithDataArray:(NSArray *)dataArray
                        progressBlock:(BmobFileBatchProgressBlock)progress
                          resultBlock:(BmobFileBatchResultBlock)block;
-                         
+
 BmobFilePro
 +(void)uploadFilesWithDatas:(NSArray *)dataArray
                 resultBlock:(BmobBatchFileUploadResultBlock)block
@@ -184,7 +207,7 @@ v1.4.1 (2014-08-05)
 BmobUser类增加：
 1.QQ，新浪微博账号注册登录Bmob的功能
 2.关联QQ账号，微博账号功能
-3.提供取消关联的功能 
+3.提供取消关联的功能
 v1.4.0 (2014-07-18)
 1、增加数据实时功能，提供多种监听表变化的方法。
 2、增加BmobEvent类别，监听事件后，开发者可在代理函数里进行操作。

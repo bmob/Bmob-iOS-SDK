@@ -16,7 +16,7 @@
 
 /**
  *  请求短信信息
- *
+ *d4f6c4b18b7e35a7255d724a0ed34d47
  *  @param number   电话号码
  *  @param content  短信内容
  *  @param sendTime 发送时间（可为空）

@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "BmobConfig.h"
 
 /*
  错误码含义
@@ -39,9 +38,6 @@ typedef NS_ENUM(NSInteger, BmobPayType) {
     BmobAlipay = 3
 };
 
-//支付查询结果 Block
-typedef void (^BmobPayResultBlock) (NSDictionary *resultDic, NSError *error);
-
 /**
  调用支付接口
  
@@ -49,7 +45,7 @@ typedef void (^BmobPayResultBlock) (NSDictionary *resultDic, NSError *error);
  @param price 订单价格，限额 0-5000
  @param orderName 订单名称
  @param describe 订单描述
- @param result 支付回调
+ @param result 支付结果回调
  */
 + (void)payWithPayType:(BmobPayType)payType
                  price:(NSNumber *)price
@@ -58,8 +54,17 @@ typedef void (^BmobPayResultBlock) (NSDictionary *resultDic, NSError *error);
                 result:(void(^)(BOOL isSuccessful, NSError *error))result;
 
 /**
+ 订单信息回调
+ 
+ @param orderInfoCallback 回调block
+  */
++ (void)orderInfoCallback:(void(^)(NSDictionary *orderInfo))orderInfoCallback;
+
+/**
  支付结果自助查询
+ 
+ @param result 回调block
  */
-+ (void)queryWithResult:(BmobPayResultBlock)result;
++ (void)queryWithResult:(void(^)(NSDictionary *resultDic, NSError *error))result;
 
 @end

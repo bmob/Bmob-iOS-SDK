@@ -62,9 +62,11 @@ typedef NS_ENUM(NSInteger, BmobPayType) {
 
 /**
  支付结果自助查询
- 
+
+ @param orderNumber 订单号
  @param result 回调block
  */
-+ (void)queryWithResult:(void(^)(NSDictionary *resultDic, NSError *error))result;
++ (void)queryWithOrderNumber:(NSString *)orderNumber
+                      result:(void(^)(NSDictionary *resultDic, NSError *error))result;
 
 @end

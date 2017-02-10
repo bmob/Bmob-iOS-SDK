@@ -43,7 +43,6 @@
 
 -(void)batchObjectsInBackgroundWithResultBlock:(void(^)(BOOL isSuccessful,NSError *error))block;
 
-
 /**
  *  批量修改数据
  *

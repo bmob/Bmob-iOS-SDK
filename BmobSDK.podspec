@@ -7,7 +7,7 @@ Pod::Spec.new do |s|
   s.license      = { :type => "MIT", :file => "LICENSE" }
   s.author       = { "Bmob" => "support@bmob.cn" }
   s.platform     = :ios, "7.0"
-  s.source       = { :git => "https://github.com/bmob/Bmob-iOS-SDK", :tag => s.version.to_s}
+  s.source       = { :git => "https://github.com/bmob/Bmob-iOS-SDK.git", :tag => s.version.to_s}
   s.license              = { :type => "MIT", :file => "LICENSE" }
   s.vendored_framework = "**/BmobSDK.framework"
   s.requires_arc = true

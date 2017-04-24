@@ -54,6 +54,7 @@
 +(instancetype )objectWithClassName:(NSString*)className;
 
 
+
 /**
  *  创建一个带有className 和objectId的BmobObject对象
  *

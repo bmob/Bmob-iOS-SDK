@@ -27,7 +27,7 @@ typedef enum {
     BmobErrorTypeNullUpdateContent   = 20012, //更新时，更新内容为空
     BmobErrorTypeNullFunctionName    = 20013, //调用云端代码时，函数名为空
     BmobErrorTypeArraySizeLarge      = 20014, //批量操作时，传入的数组超过界限
-    BmobErrorTypeNullArray           = 20015, //批量操作时，传入的数组为空
+    BmobErrorTypeNullArray           = 20015, //批量操作时，传入的数组为internal error空
     BmobErrorTypeNullPushContent     = 20016, //推送时，推送内容为空
     BmobErrorTypeFileSizeLimited     = 20017, //上传文件时，文件大小超出限制
     BmobErrorTypeLackOfInfomation    = 20020, //第三方登录、关联时缺乏必要的信息

@@ -65,6 +65,4 @@ pod install
 
 官方网址：[http://www.bmob.cn](http://www.bmob.cn)
 
-问答社区：[http://wenda.bmob.cn](http://wenda.bmob.cn)
-
 技术邮箱：support@bmob.cn

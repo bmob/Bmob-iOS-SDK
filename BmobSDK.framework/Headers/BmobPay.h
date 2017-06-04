@@ -34,7 +34,7 @@
  - BmobAlipay: 支付宝付款
  */
 typedef NS_ENUM(NSInteger, BmobPayType) {
-    BmobWechat = 0,
+    BmobWechat = 5,
     BmobAlipay = 3
 };
 

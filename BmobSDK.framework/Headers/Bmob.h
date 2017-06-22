@@ -70,6 +70,7 @@ extern NSString *const  kBmobInitFailNotification;
  */
 +(void)activateSDK;
 
+
 //重新设置请求域名
 +(void)resetDomain:(NSString *) url;
 

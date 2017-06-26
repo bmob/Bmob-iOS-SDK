@@ -14,6 +14,6 @@ Pod::Spec.new do |s|
   s.vendored_libraries = '*.a'
   s.frameworks  = "CoreLocation","Security","CoreGraphics","MobileCoreServices","CFNetwork","CoreTelephony","SystemConfiguration"
   s.libraries   = "z.1.2.5", "icucore","sqlite3","c++"
-  s.dependency 'WechatOpenSDK'
+  s.dependency 'WechatOpenSDK’,”~>1.7.8”
   
 end

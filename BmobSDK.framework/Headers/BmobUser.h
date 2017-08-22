@@ -35,6 +35,7 @@
  */
 @property (copy, nonatomic) NSString *mobilePhoneNumber;
 
+
 #pragma mark 用户表查询
 /**
  *  查询用户表
@@ -129,6 +130,16 @@
  *	@return	返回BmobUser对象
  */
 +(BmobUser*)currentUser;
+
+
+/**
+  *获取当前用户的sessiontoken
+
+ @return 返回用户的sessiontoken
+ */
++ (NSString *)getSessionToken;
+
++ (BmobUser *)fetchUserInfo;
 
 /**
  *	得到当前BmobUser

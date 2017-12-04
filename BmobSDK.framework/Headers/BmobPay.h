@@ -32,10 +32,14 @@
  
  - BmobWechat: 微信付款
  - BmobAlipay: 支付宝付款
+ - BmobQQpay  :QQ付款
+ - BmobSweeppay :扫码付款
  */
 typedef NS_ENUM(NSInteger, BmobPayType) {
-    BmobWechat = 5,
-    BmobAlipay = 3
+    BmobAlipay = 1,
+    BmobWechat = 2,
+    BmobQQpay = 3,
+    BmobSweeppay = 4
 };
 
 /**

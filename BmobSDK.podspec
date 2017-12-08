@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
   s.license              = { :type => "MIT", :file => "LICENSE" }
   s.vendored_framework = "**/BmobSDK.framework"
   s.requires_arc = true
-  s.frameworks  = "CoreLocation","Security","CoreGraphics","MobileCoreServices","CFNetwork","CoreTelephony","SystemConfiguration","Photos.framework"
+  s.frameworks  = "CoreLocation","Security","CoreGraphics","MobileCoreServices","CFNetwork","CoreTelephony","SystemConfiguration","Photos"
   s.libraries   = "z.1.2.5", "icucore","sqlite3","c++"
  
 end

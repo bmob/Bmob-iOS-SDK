@@ -139,7 +139,7 @@
  */
 + (NSString *)getSessionToken;
 
-+ (BmobUser *)fetchUserInfo;
++ (instancetype )fetchUserInfo;
 
 /**
  *	得到当前BmobUser

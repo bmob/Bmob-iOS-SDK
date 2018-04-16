@@ -42,7 +42,7 @@ echo "===> BmobSDK framework is built, start modifing the CFBundleShortVersionSt
 # git操作
 echo "|=====> STARTING THE GIT ACTION <=====|"
 git add .
-git commit -m "[$(date +'%Y-%m-%d %H:%M:%S')][陈超邦][SDK${version}]"
+git commit -m "[$(date +'%Y-%m-%d %H:%M:%S')][VV][SDK${version}]"
 git push origin master
 echo "|=====> THE PUSH IS DONE，START ADDING THE TAG <=====|"
 git tag "${version}"

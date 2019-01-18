@@ -17,11 +17,11 @@ INSTALL_DIR="${CURRENT_DIR}/${FMK_NAME}.framework"
 # 设置生成针对模拟器的类库文件以及针对真机的类库的存放目录
 WRK_DIR=build
 DEVICE_DIR=${WRK_DIR}/Release-iphoneos/${FMK_NAME}.framework
-SIMULATOR_DIR=${WRK_DIR}/Release-iphonesimulator/${FMK_NAME}.framework
+SIMULATOR_DIR=${WRK_DIR}/Debug-iphonesimulator/${FMK_NAME}.framework
 # -configuration ${CONFIGURATION}
 # Clean and Building both architectures.
 xcodebuild -configuration "Release" -target "${FMK_NAME}" -sdk iphoneos clean build
-xcodebuild -configuration "Release" -target "${FMK_NAME}" -sdk iphonesimulator clean build
+xcodebuild -configuration "Debug" -target "${FMK_NAME}" -sdk iphonesimulator clean build
 # Cleaning the oldest.移除旧的类库文件，fi是if的结束标记
 if [ -d "${INSTALL_DIR}" ]
 then

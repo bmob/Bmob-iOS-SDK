@@ -49,4 +49,4 @@ git tag "${version}"
 git push --tags
 echo "|=====> THE GIT ACTION IS DONE, TRY TRUNK PUSH NOW <=====|"
 # pod trunk push
-pod trunk push "${CURRENT_DIR}/BmobSDK.podspec" --allow-warnings
+pod trunk push "${CURRENT_DIR}/BmobNewSDK.podspec" --allow-warnings

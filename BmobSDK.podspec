@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name        = "BmobSDK"
-  s.version      = "2.3.4"
+  s.version      = "2.4.0"
   s.summary      = "Bmob 提供的iOS端的SDK."
   s.homepage     = "http://www.bmob.cn"
   s.license      = { :type => "MIT", :file => "LICENSE" }

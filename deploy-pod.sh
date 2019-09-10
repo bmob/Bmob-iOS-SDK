@@ -8,7 +8,7 @@ read -t 100 -p "INPUT THE VERSION OF THE BMOB_SDK : " version
 echo "===> Start building the BmobSDK framework <==="
 # 如果工程名称和Framework的Target名称不一样的话，要自定义FMKNAME
 # 例如: FMK_NAME = "MyFramework",工程名
-FMK_NAME='BmobNewSDK'
+FMK_NAME='BmobSDK'
 # Install dir will be the final output to the framework.
 # The following line create it in the root folder of the current project.
 # 存放的目录
@@ -38,7 +38,7 @@ rm -r "${WRK_DIR}"
 cd ${CURRENT_DIR}
 echo "===> BmobSDK framework is built, start modifing the CFBundleShortVersionString <==="
 # 修改plist文件中的版本号
-/usr/libexec/PlistBuddy -c "set :CFBundleShortVersionString ${version}" "${CURRENT_DIR}/BmobNewSDK.framework/Info.plist"
+/usr/libexec/PlistBuddy -c "set :CFBundleShortVersionString ${version}" "${CURRENT_DIR}/BmobSDK.framework/Info.plist"
 # git操作
 echo "|=====> STARTING THE GIT ACTION <=====|"
 git add .
@@ -49,4 +49,4 @@ git tag "${version}"
 git push --tags
 echo "|=====> THE GIT ACTION IS DONE, TRY TRUNK PUSH NOW <=====|"
 # pod trunk push
-pod trunk push "${CURRENT_DIR}/BmobNewSDK.podspec" --allow-warnings
+pod trunk push "${CURRENT_DIR}/BmobSDK.podspec" --allow-warnings

@@ -2,7 +2,7 @@
 
 ### 快速入门
 
-不知道如何使用Bmob iOS SDK的朋友可以移步查看我们为大家准备的 [快速入门文档](http://doc.bmobapp.com/data/ios/index.html).
+不知道如何使用Bmob iOS SDK的朋友可以移步查看我们为大家准备的快读入门文档 [http://doc.bmobapp.com/data/ios/index.html](http://doc.bmobapp.com/data/ios/index.html).
 
 
 ### 在CocoaPod中安装BmobSDK

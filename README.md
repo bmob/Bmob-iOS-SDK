@@ -63,6 +63,6 @@ pod install
 
 ### Bmob官方信息
 
-官方网址：[http://www.bmob.cn](http://www.bmob.cn)
+官方网址：[https://www.bmobapp.com/](https://www.bmobapp.com/)
 
-技术邮箱：support@bmob.cn
+技术邮箱：support@bmobapp.com/

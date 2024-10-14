@@ -1,13 +1,13 @@
 Pod::Spec.new do |s|
 
   s.name        = "BmobSDK"
-  s.version      = "2.4.1"
+  s.version      = "2.4.21"
   s.summary      = "Bmob 提供的iOS端的SDK."
-  s.homepage     = "http://www.bmob.cn"
+  s.homepage     = "http://www.bmobapp.com"
   s.license      = { :type => "MIT", :file => "LICENSE" }
-  s.author       = { "Bmob" => "support@bmob.cn" }
-  s.platform     = :ios, "7.0"
-  s.source       = { :git => "https://github.com/bmob/Bmob-iOS-SDK.git", :tag => "2.4.1"}
+  s.author       = { "Bmob" => "730170034@qq.com" }
+  s.platform     = :ios, "11.0"
+  s.source       = { :git => "https://github.com/bmob/Bmob-iOS-SDK.git", :tag => "2.4.21"}
   s.license              = { :type => "MIT", :file => "LICENSE" }
   s.vendored_framework = "**/BmobSDK.framework"
   s.requires_arc = true

@@ -65,4 +65,4 @@ pod install
 
 官方网址：[https://www.bmobapp.com/](https://www.bmobapp.com/)
 
-技术邮箱：support@bmobapp.com/
+技术邮箱：730170034@qq.com

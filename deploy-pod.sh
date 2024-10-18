@@ -1,5 +1,7 @@
 # 当前脚本存储地点
 CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+# 输出CURRENT_DIR
+echo "${CURRENT_DIR}-hello"
 # 更改工作目录到脚本存储地点
 cd "${CURRENT_DIR}/../Bmob-iOS/Bmob_iOS_Source_New/BmobMutiSDK/BmobSDK/"
 # 输入BmobSDK版本号
@@ -33,20 +35,21 @@ cp -R "${DEVICE_DIR}/" "${INSTALL_DIR}/"
 # Uses the Lipo Tool to merge both binary files (i386 + armv6/armv7) into one Universal final product.
 lipo -create "${DEVICE_DIR}/${FMK_NAME}" "${SIMULATOR_DIR}/${FMK_NAME}" -output "${INSTALL_DIR}/${FMK_NAME}"
 # 移除 build 目录
-rm -r "${WRK_DIR}"
+# rm -r "${WRK_DIR}"
 # 更改工作目录回脚本存储点
 cd ${CURRENT_DIR}
+echo ${CURRENT_DIR}
 echo "===> BmobSDK framework is built, start modifing the CFBundleShortVersionString <==="
 # 修改plist文件中的版本号
 /usr/libexec/PlistBuddy -c "set :CFBundleShortVersionString ${version}" "${CURRENT_DIR}/BmobSDK.framework/Info.plist"
 # git操作
-echo "|=====> STARTING THE GIT ACTION <=====|"
-git add .
-git commit -m "[$(date +'%Y-%m-%d %H:%M:%S')][VV][SDK${version}]"
-git push origin master
-echo "|=====> THE PUSH IS DONE，START ADDING THE TAG <=====|"
-git tag "${version}"
-git push --tags
-echo "|=====> THE GIT ACTION IS DONE, TRY TRUNK PUSH NOW <=====|"
-# pod trunk push
-pod trunk push "${CURRENT_DIR}/BmobSDK.podspec" --allow-warnings
+# echo "|=====> STARTING THE GIT ACTION <=====|"
+# git add .
+# git commit -m "[$(date +'%Y-%m-%d %H:%M:%S')][VV][SDK${version}]"
+# git push origin master
+# echo "|=====> THE PUSH IS DONE，START ADDING THE TAG <=====|"
+# git tag "${version}"
+# git push --tags
+# echo "|=====> THE GIT ACTION IS DONE, TRY TRUNK PUSH NOW <=====|"
+# # pod trunk push
+# pod trunk push "${CURRENT_DIR}/BmobSDK.podspec" --allow-warnings

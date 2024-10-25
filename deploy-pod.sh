@@ -1,9 +1,13 @@
 # 当前脚本存储地点
 CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 # 输出CURRENT_DIR
-echo "${CURRENT_DIR}-hello"
+echo "${CURRENT_DIR}"
+# /Users/magic/Documents/bmob/Bmob-iOS-SDK
+
 # 更改工作目录到脚本存储地点
 cd "${CURRENT_DIR}/../Bmob-iOS/Bmob_iOS_Source_New/BmobMutiSDK/BmobSDK/"
+echo "${CURRENT_DIR}/../Bmob-iOS/Bmob_iOS_Source_New/BmobMutiSDK/BmobSDK/"
+# exit()
 # 输入BmobSDK版本号
 read -t 100 -p "INPUT THE VERSION OF THE BMOB_SDK : " version
 # Sets the target folders and the final framework product.
@@ -15,23 +19,33 @@ FMK_NAME='BmobSDK'
 # The following line create it in the root folder of the current project.
 # 存放的目录
 INSTALL_DIR="${CURRENT_DIR}/${FMK_NAME}.framework"
+# /Users/magic/Documents/bmob/Bmob-iOS-SDK/BmobSDK.framework
+echo "${CURRENT_DIR}/${FMK_NAME}.framework"
+# exit
 # Working dir will be deleted after the framework creation.
 # 设置生成针对模拟器的类库文件以及针对真机的类库的存放目录
 WRK_DIR=build
-DEVICE_DIR=${WRK_DIR}/Release-iphoneos/${FMK_NAME}.framework
-SIMULATOR_DIR=${WRK_DIR}/Debug-iphonesimulator/${FMK_NAME}.framework
+DEVICE_DIR=${WRK_DIR}/Release/Release-iphoneos/${FMK_NAME}.framework
+SIMULATOR_DIR=${WRK_DIR}/Debug/Debug-iphonesimulator/${FMK_NAME}.framework
 # -configuration ${CONFIGURATION}
 # Clean and Building both architectures.
-xcodebuild -configuration "Release" -target "${FMK_NAME}" -sdk iphoneos clean build
-xcodebuild -configuration "Debug" -target "${FMK_NAME}" -sdk iphonesimulator clean build
+xcodebuild -configuration "Release" -target "${FMK_NAME}" -sdk iphoneos SYMROOT=build/Release  clean build
+xcodebuild -configuration "Debug" -target "${FMK_NAME}" -sdk iphonesimulator SYMROOT=build/Debug VALID_ARCHS="x86_64" clean build
+# xcodebuild -configuration "Debug" -target "${FMK_NAME}" -sdk iphonesimulator clean build
+# exit
 # Cleaning the oldest.移除旧的类库文件，fi是if的结束标记
 if [ -d "${INSTALL_DIR}" ]
 then
 rm -rf "${INSTALL_DIR}"
 fi
 mkdir -p "${INSTALL_DIR}"
+
 # 这句用来作什么？合并的只是BmobSDK文件，其余文件需要先复制过去，其余文件真机和虚拟机都是一样的
 cp -R "${DEVICE_DIR}/" "${INSTALL_DIR}/"
+
+
+# echo "${DEVICE_DIR}/${FMK_NAME}" "${SIMULATOR_DIR}/${FMK_NAME}" -output "${INSTALL_DIR}/${FMK_NAME}"
+# exit
 # Uses the Lipo Tool to merge both binary files (i386 + armv6/armv7) into one Universal final product.
 lipo -create "${DEVICE_DIR}/${FMK_NAME}" "${SIMULATOR_DIR}/${FMK_NAME}" -output "${INSTALL_DIR}/${FMK_NAME}"
 # 移除 build 目录

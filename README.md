@@ -30,20 +30,25 @@ $ sudo gem install cocoapods
 如果在安装CocoaPods的过程中有任何问题，可以查看文档：http://code4app.com/article/cocoapods-install-usage
 
 **注意**
-在OS X 10.11之前的版本可以添加的是 `http://ruby.taobao.org/`(http而不是https) 这个源,需要进行以下操作，
+在OS X 10.11之前的版本可以添加的是 `http://ruby.taobao.org/`(http而不是https) 这个源,需要进行以下操作，如果taobao不行就网上找其他源，当然如果有梯子也可以不执行这些
 
 ```
 $ sudo gem sources --remove http://ruby.taobao.org/
 $ sudo gem sources -a https://ruby.taobao.org/
-$ sudo gem install cocoapods
+$ sudo gem install cocoapods --verbose
 ```
 
 #### 安装BmobSDK
 
-在你的项目的根目录中新建一个 `Podfile` 文件，添加内容如下：
+在你的项目的根目录中新建一个 `Podfile` 文件，添加内容如下，其中bmob202403改为自己项目名称：
 
 ```
-pod 'BmobSDK'
+platform :ios, '11.0'  # Specify the platform and deployment target
+
+target 'bmob202403' do
+  pod 'BmobSDK'
+end
+
 ```
 
 如下图所示：

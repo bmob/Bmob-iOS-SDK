@@ -1,73 +1,217 @@
 # Bmob iOS SDK
 
-### 快速入门
+---
 
-不知道如何使用Bmob iOS SDK的朋友可以移步查看我们为大家准备的快读入门文档 [http://doc.bmobapp.com/data/ios/index.html](http://doc.bmobapp.com/data/ios/index.html).
+## 简介
 
+Bmob iOS SDK 是一套高效、易用的移动后端云服务开发工具包，助力开发者快速集成数据存储、用户管理、文件存储、云函数等后端能力。SDK 支持多架构，兼容主流 iOS 版本，适用于各类 iOS 应用开发场景。
 
-### 在CocoaPod中安装BmobSDK
+---
 
-#### 安装CocoaPods
- 
-   当你开发iOS应用时，会经常使用到很多第三方开源类库，比如JSONKit，AFNetWorking等等。可能某个类库又用到其他类库，所以要使用它，必须得另外下载其他类库，而其他类库又用到其他类库，“子子孙孙无穷尽也”，这也许是比较特殊的情况。总而言之，手动一个个去下载所需类库十分麻烦。另外一种常见情况是，你项目中用到的类库有更新，你必须得重新下载新版本，重新加入到项目中，十分麻烦。如果能有什么工具能解决这些恼人的问题，那将“善莫大焉”。所以，你需要 CocoaPods。
+## 主要特性
 
-   CocoaPods是iOS最常用最有名的类库管理工具，上述两个烦人的问题，通过cocoaPods，只需要一行命令就可以完全解决。
+- 数据存储与查询
+- 用户注册、登录与管理
+- 文件上传与下载
+- 云函数调用
+- 推送通知
+- 权限与角色管理
+- 多架构支持（arm64、x86_64 等）
+- 完善的错误处理与回调机制
 
-   在安装CocoaPods时不要直接执行 `sudo gem install cocoapods` 命令，因为`cocoapods.org`被墙了。我们可以使用淘宝的Ruby镜像来访问CocoaPods，安装CocoaPods的过程如下：
+---
 
-```
-$ sudo gem sources --remove https://rubygems.org/
-//等有反应之后再敲入以下命令
-$ sudo gem sources -a https://ruby.taobao.org/
-$ sudo gem install cocoapods
+## 安装方式
 
-```
+### 1. 使用 CocoaPods 安装（推荐）
 
-安装完成之后，命令行终端应该是如下的效果：
+CocoaPods 是 iOS 最常用的依赖管理工具，可以极大简化第三方库的集成和升级流程。
 
-![](Resourse/install.png)
+#### 安装 CocoaPods
 
-如果在安装CocoaPods的过程中有任何问题，可以查看文档：http://code4app.com/article/cocoapods-install-usage
+如未安装 CocoaPods，请先在终端执行：
 
-**注意**
-在OS X 10.11之前的版本可以添加的是 `http://ruby.taobao.org/`(http而不是https) 这个源,需要进行以下操作，如果taobao不行就网上找其他源，当然如果有梯子也可以不执行这些
-
-```
-$ sudo gem sources --remove http://ruby.taobao.org/
-$ sudo gem sources -a https://ruby.taobao.org/
-$ sudo gem install cocoapods --verbose
+```bash
+sudo gem install cocoapods
 ```
 
-#### 安装BmobSDK
+如遇网络问题，可更换 Ruby 镜像源（如淘宝源），或参考[官方文档](http://code4app.com/article/cocoapods-install-usage)。
 
-在你的项目的根目录中新建一个 `Podfile` 文件，添加内容如下，其中bmob202403改为自己项目名称：
+#### 集成 BmobSDK
 
-```
-platform :ios, '11.0'  # Specify the platform and deployment target
+1. 在你的项目根目录下新建 `Podfile` 文件，内容如下（`bmob202403` 替换为你的项目名）：
 
+```ruby
+platform :ios, '11.0'  # 指定平台和最低支持版本
 target 'bmob202403' do
   pod 'BmobSDK'
 end
-
 ```
 
-如下图所示：
+2. 终端进入项目根目录，执行：
 
-![](Resourse/podfile.png)
-
-
-终端命令行（使用 `cd` 命令）进入到要使用Bmob的iOS项目的根目录中，执行如下命令安装SDK：
-
-```
+```bash
 pod install
 ```
 
-安装完成之后，点击下图框中的.xcworkplace文件来打开项目，接下来你就可以在项目中使用BmobSDK开发了。
+3. 安装完成后，使用 `.xcworkspace` 文件打开项目，即可在项目中使用 BmobSDK。
 
+![](Resourse/install.png)
+![](Resourse/podfile.png)
 ![](Resourse/project.png)
 
-### Bmob官方信息
+---
 
-官方网址：[https://www.bmobapp.com/](https://www.bmobapp.com/)
+### 2. 手动集成
 
-技术邮箱：730170034@qq.com
+- 下载并解压本 SDK。
+- 将 `BmobSDK.xcframework` 拖入 Xcode 项目，勾选"Copy items if needed"。
+- 在 `Build Phases` 的 `Link Binary With Libraries` 中添加所需依赖库。
+
+---
+
+## 3. Swift 工程集成说明
+
+如需在 Swift 项目中使用 BmobSDK，请创建桥接头文件 `BmobSwift-Bridging-Header.h`，并在其中添加：
+
+```objc
+#import <BmobSDK/Bmob.h>
+```
+
+然后在 Xcode 的 Build Settings 中，将 `Objective-C Bridging Header` 设置为该文件的路径（如 `$(SRCROOT)/YourProject/BmobSwift-Bridging-Header.h`）。
+
+---
+
+## Swift 代码调用示例
+
+在 Swift 项目中集成 BmobSDK 后，可按如下方式调用：
+
+#### 1. 初始化 SDK
+
+```swift
+import UIKit
+
+@UIApplicationMain
+class AppDelegate: UIResponder, UIApplicationDelegate {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        Bmob.register(withAppKey: "Your_App_Key")
+        return true
+    }
+}
+```
+
+#### 2. 数据操作示例
+
+```swift
+let gameScore = BmobObject(className: "GameScore")
+gameScore?.setObject(1337, forKey: "score")
+gameScore?.setObject("Sean Plott", forKey: "playerName")
+gameScore?.saveInBackground({ (isSuccessful, error) in
+    // 处理结果
+})
+```
+
+---
+
+## 快速入门
+
+如需详细入门教程，请参考 [Bmob iOS 快速入门文档](http://doc.bmobapp.com/data/ios/index.html)。
+
+#### 1. 初始化 SDK
+
+```objc
+#import <BmobSDK/Bmob.h>
+
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [Bmob registerWithAppKey:@"Your_App_Key"];
+    return YES;
+}
+```
+
+#### 2. 数据操作示例
+
+```objc
+// 新增对象
+BmobObject *gameScore = [BmobObject objectWithClassName:@"GameScore"];
+[gameScore setObject:@1337 forKey:@"score"];
+[gameScore setObject:@"Sean Plott" forKey:@"playerName"];
+[gameScore saveInBackgroundWithResultBlock:^(BOOL isSuccessful, NSError *error) {
+    // 处理结果
+}];
+```
+
+更多用法请参考[官方文档](https://doc.bmob.cn/ios/quickstart/)
+
+---
+
+## 文档与支持
+
+- [快速入门](https://doc.bmob.cn/ios/quickstart/)
+- [开发文档](https://doc.bmobapp.com/data/ios/develop_doc/)
+- 官方网站：[https://www.bmobapp.com/](https://www.bmobapp.com/)
+- 技术支持邮箱：730170034@qq.com
+- [工单系统]
+
+---
+
+## 许可证
+
+本项目遵循 MIT License，详见 LICENSE 文件。
+
+---
+
+## 更新历史（最近 20 条）
+
+- v2.5.625 (2015-06-1)
+  1. 修复一些情况下后端文件域名绑定新域名客户端如果不重新安装 App 还是返回缓存旧域名问题
+  2. 云函数调用服务端返回自定义特殊字符极端情况下可能陷入死循环问题
+- v2.5.61 (2015-06-1)
+  1. sdk 最低支持版本 IOS 15.6
+  2. 新增 BmobSDK.xcframework 的脚本
+  3. 打包格式正式切换为 xcframework 新格式
+- v2.4.3 (2014-10-25)
+  1. 上一个版本2.4.21，打包 bug 只支持 arm 架构真机，新版本支持多架构
+  2. CC_MD 最高支持 iOS 13，将 CC_MD5 替换为 CC_SHA256
+- v2.4.21 (2014-09-09)
+  1. 默认域名 cctvcloud.cn
+- v2.4.2 (2019-09-09)
+  1. 修复 ios 官方时间错误问题
+- v2.4.0 (2019-09-09)
+  1. 修改了 SDK 内部域名相关，方便开发者测试期间有测试域名
+- v2.4.2 (2022-05-07)
+  1. 修复 iOS15.4 之后，字段格式为 NSDate 时，上传对象出错
+- v2.4.0 (2019-09-09)
+  1. 修改了 SDK 内部域名相关，方便开发者后续切换主域名
+- v2.3.4 (2019-06-26)
+  1. 修复了使用文件独立域名的情况下，部分用户无法上传文件的问题
+  2. 修复了文件上传失败回调不准确的问题
+  3. 修复了部分文件上传时 Content-Type 错误的问题
+  4. 针对部分 DNS 被劫持的环境提高了兼容性
+- v2.3.3 (2019-03-28)
+  1. 将文件上传由分块上传改为断点续传
+- v2.3.2 (2019-03-14)
+  1. 修改请求域名，解决新疆等地区 DNS 被劫持的问题
+  2. 修复了一些小的兼容性问题
+  3. 防攻击加强
+- v2.3.1 (2018-04-17)
+  1. 支持上传较大的文件
+- v2.3.0 (2018-04-11)
+  1. 修复 bug
+- v2.2.9 (2018-04-08)
+  1. 修复上传文件过大导致 crash 的 bug
+- v2.2.8 (2017-12-08)
+  1. 修复 bug
+- v2.2.7 (2017-12-04)
+  1. 修复 bug
+  2. 添加 QQ 支付功能
+- v2.2.6 (2017-11-22)
+  1. 修复 bug
+- v2.2.5 (2017-11-20)
+  1. 修复支付宝
+- v2.2.4 (2017-10-25)
+  1. 恢复支付宝功能
+- v2.2.3 (2017-09-04)
+  1. 修复 bug
+
+更多历史版本变更请查看 [Bmob_iOS_SDK更新历史.txt](./Bmob_iOS_SDK更新历史.txt)。
+

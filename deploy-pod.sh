@@ -67,3 +67,6 @@ echo "===> BmobSDK framework is built, start modifing the CFBundleShortVersionSt
 # echo "|=====> THE GIT ACTION IS DONE, TRY TRUNK PUSH NOW <=====|"
 # # pod trunk push
 # pod trunk push "${CURRENT_DIR}/BmobSDK.podspec" --allow-warnings
+
+# pod lib lint BmobSDK.podspec --allow-warnings 先验证一下
+# pod trunk push BmobSDK.podspec --allow-warnings 再发布

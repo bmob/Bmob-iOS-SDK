@@ -39,11 +39,11 @@ sudo gem install cocoapods
 
 #### 集成 BmobSDK
 
-1. 在你的项目根目录下新建 `Podfile` 文件，内容如下（`bmob202403` 替换为你的项目名）：
+1. 在你的项目根目录下新建 `Podfile` 文件，内容如下（`bmob202603` 替换为你的项目名）：
 
 ```ruby
-platform :ios, '11.0'  # 指定平台和最低支持版本
-target 'bmob202403' do
+platform :ios, '15.6'  # 指定平台和最低支持版本
+target 'bmob202603' do
   pod 'BmobSDK'
 end
 ```
@@ -162,7 +162,7 @@ BmobObject *gameScore = [BmobObject objectWithClassName:@"GameScore"];
 
 ## 更新历史（最近 20 条）
 
-- v2.5.625 (2015-06-1)
+- v2.5.625 (2015-06-25)
   1. 修复一些情况下后端文件域名绑定新域名客户端如果不重新安装 App 还是返回缓存旧域名问题
   2. 云函数调用服务端返回自定义特殊字符极端情况下可能陷入死循环问题
 - v2.5.61 (2015-06-1)

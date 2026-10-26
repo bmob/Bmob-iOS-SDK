@@ -44,7 +44,7 @@ sudo gem install cocoapods
 ```ruby
 platform :ios, '15.6'  # 指定平台和最低支持版本
 target 'bmob202603' do
-  pod 'BmobSDK'
+  pod 'BmobSDK', '~> 2.6.2'
 end
 ```
 
@@ -160,7 +160,31 @@ BmobObject *gameScore = [BmobObject objectWithClassName:@"GameScore"];
 
 ---
 
+## 2.6.2 升级说明
+
+BmobFile 现有调用方式保持不变。小于服务端 CDN 配置 `uploadThreshold` 的文件走 REST，达到阈值走 OSS 分片断点续传；缺省阈值为 10485760 字节。大文件需要服务端配置有效 STS 角色及临时凭证。新对象路径为 `yyyy/MM/dd/随机文件名`，重试续传保留原路径。
+
+取消调用 `[file cancel]`；使用原文件名和内容再次保存可恢复已完成分片。App 重启后需业务重新发起，上传和文件登记完成后才返回成功。
+
+手动集成需要链接 `Network.framework`、`libresolv.tbd` 和原有系统依赖（包括 `SystemConfiguration.framework`、`CoreTelephony.framework`）；CocoaPods 自动添加。保留框架内 `PrivacyInfo.xcprivacy`。内置 OSS SDK 的许可证见 `LICENSE-AliyunOSS`；若业务也静态集成 AliyunOSSiOS，需统一依赖以避免重复符号。
+
+```objc
+[BmobUser checkSessionInBackgroundWithBlock:^(BOOL valid, NSError *error) {
+    // 请求错误单独处理；无 error 时 valid 表示会话是否有效，不自动注销。
+}];
+[BmobUser logoutInBackgroundWithBlock:^(BOOL success, NSError *error) {
+    // 服务端退出成功后清理匹配的本地会话；原 logout 仍只退出本地。
+}];
+```
+
+## 发布（维护者）
+
+`bash deploy-pod.sh 2.6.2` 构建 XCFramework 并本地校验。
+`bash deploy-pod.sh 2.6.2 --publish` 在校验通过后提交版本、推送 Git tag 并发布 CocoaPods。执行前需更新 podspec 及更新说明，并登录 `pod trunk`。
+
 ## 更新历史（最近 20 条）
+
+- v2.6.2 (2026-10-26)：大文件分片续传、日期目录、会话检查及服务端退出，补齐系统依赖。
 
 - v2.5.625 (2015-06-25)
   1. 修复一些情况下后端文件域名绑定新域名客户端如果不重新安装 App 还是返回缓存旧域名问题

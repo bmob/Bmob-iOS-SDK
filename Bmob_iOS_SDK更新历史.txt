@@ -1,3 +1,9 @@
+v2.6.2(2026-10-26)
+1.保留 BmobFile 接口，按 CDN uploadThreshold 自动选择 REST 或 OSS 分片断点续传，默认阈值 10 MiB。
+2.新对象按年/月/日存储，支持取消后重试、跨日续传及文件登记失败后重试。
+3.新增 /8/check_session 会话检查及 /8/logout 服务端退出接口；原 logout 保持本地退出语义。
+4.支持 arm64 真机及 arm64/x86_64 模拟器，补齐 Network、resolv 依赖及 OSS 隐私声明。
+
 v2.6.1(2026-09-11)
 1.更新 BmobSDK 二进制文件及代码签名
 

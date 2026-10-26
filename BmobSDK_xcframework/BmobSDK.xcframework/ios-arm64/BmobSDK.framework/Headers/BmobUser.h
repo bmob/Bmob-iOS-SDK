@@ -71,6 +71,14 @@
  */
 +(void)logout;
 
+/// 服务端退出当前用户；成功后清理本地缓存，失败时保留登录信息。回调在主线程。
++ (void)logoutInBackgroundWithBlock:(BmobBooleanResultBlock)block NS_SWIFT_NAME(logoutInBackground(_:));
+
+/// 退出指定用户会话；仅在当前用户 ID/token 均匹配时清理本地缓存。
++ (void)logoutWithObjectId:(NSString *)objectId
+             sessionToken:(NSString *)sessionToken
+                    block:(BmobBooleanResultBlock)block NS_SWIFT_NAME(logout(objectId:sessionToken:completion:));
+
 /**
  *	后台注册
  */
@@ -130,6 +138,19 @@
  *	@return	返回BmobUser对象
  */
 +(BmobUser*)currentUser;
+
+/**
+ * 检查当前缓存用户的服务端会话（POST /8/check_session）。
+ * valid=NO,error=nil 表示会话失效或本地未登录；请求错误通过 error 返回。
+ * 回调在主线程执行；不自动清除本地登录信息。
+ */
++ (void)checkSessionInBackgroundWithBlock:(BmobBooleanResultBlock)block NS_SWIFT_NAME(checkSessionInBackground(_:));
+
+/** 检查指定用户的 token，不修改当前登录用户。缺少参数时返回参数错误。 */
++ (void)checkSessionWithObjectId:(NSString *)objectId
+                  sessionToken:(NSString *)sessionToken
+                         block:(BmobBooleanResultBlock)block NS_SWIFT_NAME(checkSession(objectId:sessionToken:completion:));
+
 
 
 /**

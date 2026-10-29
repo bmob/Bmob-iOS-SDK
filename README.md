@@ -44,7 +44,7 @@ sudo gem install cocoapods
 ```ruby
 platform :ios, '15.6'  # 指定平台和最低支持版本
 target 'bmob202603' do
-  pod 'BmobSDK', '~> 2.6.2'
+  pod 'BmobSDK', '~> 2.6.3'
 end
 ```
 
@@ -179,10 +179,12 @@ BmobFile 现有调用方式保持不变。小于服务端 CDN 配置 `uploadThre
 
 ## 发布（维护者）
 
-`bash deploy-pod.sh 2.6.2` 构建 XCFramework 并本地校验。
-`bash deploy-pod.sh 2.6.2 --publish` 在校验通过后提交版本、推送 Git tag 并发布 CocoaPods。执行前需更新 podspec 及更新说明，并登录 `pod trunk`。
+`bash deploy-pod.sh 2.6.3` 构建 XCFramework 并本地校验。
+`bash deploy-pod.sh 2.6.3 --publish` 在校验通过后提交版本、推送 Git tag 并发布 CocoaPods。执行前需更新 podspec 及更新说明，并登录 `pod trunk`。
 
 ## 更新历史（最近 20 条）
+
+- v2.6.3 (2026-10-29)：修复 OSS 上传 URL 缺少斜杠，兼容读取历史畸形地址及重复文件域名前缀；不自动改写数据库。
 
 - v2.6.2 (2026-10-26)：大文件分片续传、日期目录、会话检查及服务端退出，补齐系统依赖。
 
